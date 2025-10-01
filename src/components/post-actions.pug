@@ -1,0 +1,20 @@
+mixin PostAction(item)
+  .post_action(class=`${!item.fn ? 'post_action-alt' : ''}`)
+    if (item.fn)
+      button.post_action_btn(data-action-fn=item.fn, title=item.title)
+        svg.post_action_icon(viewBox="0 0 24 24" width="24" height="24")
+          use(href=`assets/images/svg/menu-sprite.svg#menu-${item.icon}`)
+        if (item.count)
+          span.post_action_count= item.count
+    else
+      div.post_action_views
+        svg.post_action_icon(viewBox="0 0 24 24" width="24" height="24")
+          use(href=`assets/images/svg/menu-sprite.svg#menu-${item.icon}`)
+        if (item.count)
+          span.post_action_count= item.count
+
+mixin PostActions(actions = [])
+  .post_actions
+    each item in actions
+      +PostAction(item)
+      

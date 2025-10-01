@@ -1,0 +1,36 @@
+.comments {
+  &-popular {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &-mini {
+      gap: 16px;
+    }
+  }
+
+  &_item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &_head {
+      width: 100%;
+    }
+
+    &_text {
+      p {
+        line-height: 1.2;
+        font-size: 16px;
+        color: $SHADOW-RITE;
+        font-weight: 400;
+        margin: 0; /* Убираем внешний отступ */
+        -webkit-line-clamp: 3; /* Число отображаемых строк */
+        display: -webkit-box; /* Включаем флексбоксы */
+        -webkit-box-orient: vertical; /* Вертикальная ориентация */
+        overflow: hidden; /* Обрезаем всё за пределами блока */
+      }
+    }
+  }
+}

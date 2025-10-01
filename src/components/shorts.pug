@@ -1,0 +1,11 @@
+mixin ShortSwiper(props)
+  - const {title = '', poster, short, url = ''} = props
+  article.shorts_item.shorts_item-swiper
+    .shorts_item_preview
+      //- img(src=poster, alt=title)
+      video(autoplay, loop, muted, playsinline, poster=poster)
+        source(src=short, type="video/mp4")
+    a.shorts_item_title(href=url)= title
+    +PostActions([
+      {title: 'Просмотров поста', icon: 'views', count: '12K', fn: 'log'},
+    ])

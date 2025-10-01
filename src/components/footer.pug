@@ -1,0 +1,44 @@
+footer.footer
+  .container.footer_container
+    .footer_col.footer_col-logo
+      +Logo("sm")
+      .footer_privacy 
+        a(href="/") Вакансии
+        a(href="/") Политика конфиденциальности
+        p Copyright © #{new Date().getFullYear()} AFFCULT.COM
+          br
+          | All rights reserved
+    .footer_col.footer_col-list
+      h3.footer_col_title Контакты
+      +Menu([
+          { title: 'info@affcult.com', href: 'mailto:info@affcult.com', icon: 'mail' },
+          { title: '@affcult', href: 'https://t.me/affcult', icon: "tg" },
+          { title: 'Рекламодателям', href: '#' },
+        ], 1, 'footer')
+    .footer_col.footer_col-list
+      h3.footer_col_title Рубрики
+      +Menu([
+          { title: 'Статьи', href: '#' },
+          { title: 'Партнерки', href: '#', },
+          { title: 'Конференции', href: '#' },
+          { title: 'Сервисы', href: '#' },
+          { title: 'Вики', href: '#' },
+        ], 1, 'footer')
+    .footer_col.footer_col-list
+      h3.footer_col_title Темы
+      +Menu([
+          { title: 'Блоги', href: '#' },
+          { title: 'Досье', href: '#', },
+          { title: 'Кейсы', href: '#' },
+          { title: 'Обзор', href: '#' },
+          { title: 'Полезное', href: '#' },
+        ], 1, 'footer')
+    .footer_col.footer_col-list
+      h3.footer_col_title Подпишись
+      +Menu([
+          { title: 'Telegram (Новости)', href: '#', icon: "tg"},
+          { title: 'Telegram (Чат)', href: '#', icon: "tg"},
+          { title: 'Instagram', href: '#', icon: "insta" },
+          { title: 'Youtube', href: '#', icon: "youtube" },
+          { title: 'Vkontakte', href: '#', icon: "vk" },
+        ], 1, 'footer')

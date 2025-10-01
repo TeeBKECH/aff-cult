@@ -1,0 +1,39 @@
+.copy {
+  &-to {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &_discount {
+      line-height: 1;
+      font-size: 12px;
+      color: $CULT-FLAME;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 8px;
+      border-radius: 25px;
+      background: $color-12;
+    }
+    &_promocode {
+      font-size: 14px;
+      color: $CULT-FLAME;
+      font-weight: 500;
+      line-height: 1;
+    }
+    &_btn {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background: $color-12;
+      }
+    }
+    &_icon {
+    }
+  }
+}

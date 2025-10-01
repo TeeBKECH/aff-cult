@@ -1,0 +1,17 @@
+mixin InfluencerCard(props)
+  .influencer_card(class=`${props.commercial ? 'influencer_card-commercial' : ''}`)
+    a.influencer_card_img(href="#")
+      img(src=`${props.img ? props.img : 'assets/images/public/infl/1.jpg' }`, alt=props.title)
+    .influencer_card_info
+      a.influencer_card_name(href='#', class=`${props.verify ? 'influencer_card_name-verify' : ''}`)
+        span= props.title
+      .influencer_card_tags
+        each item, index in props.tags ? props.tags : []
+          span.influencer_card_tag= item
+      p.influencer_card_exp
+        span Стаж в арбитраже: 
+        =props.exp
+      .influencer_card_description 
+        p= props.description
+    .influencer_card_actions
+      +Btn(`Перейти`, [`${props.commercial ? 'commercial' : 'default'}`, 'sm', 'f14'])

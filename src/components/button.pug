@@ -1,0 +1,23 @@
+mixin BtnPrime(props, fw)
+  - const size = props.size || 'md'
+  - const br = props.br ? 'br' : ''
+  - const mode = props.mode || 'default'
+  - const type = props.type || 'button'
+  - const text = props.text || ''
+  - const fnTrigger = props.fnTrigger || 'log'
+  button(type=type, class=`btn btn-${mode} btn-${size} ${br ? 'btn-br' : ''} ${fw ? 'btn-fw' : ''}`, data-fn-trigger=fnTrigger)= props.text
+
+mixin BtnLink(props)
+  - const size = props.size || 'md'
+  - const br = props.br ? 'br' : ''
+  - const mode = props.mode || 'default'
+  - const href = props.href || '#'
+  - const text = props.text || ''
+  - const fnTrigger = props.fnTrigger || 'log'
+  a(href=href, class=`btn btn-link btn-${mode} btn-${size} ${br && 'btn-br'}`, data-fn-trigger=fnTrigger)= props.text
+
+mixin Btn(text = 'Текст кнопки', styles = ['default'], fn = 'log', type = 'button')
+  - let classes = ''
+  each item in styles
+    - classes+= ` btn--${item}`
+  button(type=type, class=`btn${classes}`, data-fn-trigger=fn)= text

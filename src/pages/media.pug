@@ -1,0 +1,131 @@
+//- @title: Media 
+//- @description: Описание Media
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow'}, 'Медиа')
+    +Filters(['Популярное', 'Обсуждаемое', 'Свежее'], 'Избранное')
+  
+  // Post Media 1
+  +Box({})
+    +PostMedia({
+      id: 'media-id-1',
+      title: 'Подкаст №1',
+      subTitle: 'Наш первый подкаст',
+      type: 'video',
+      image: 'assets/images/public/media/1.jpg',
+      videos: [
+        {
+          source: 'https://www.youtube.com/embed/Dtfc27GfJtw',
+          icon: 'youtube',
+          title: 'YouTube'
+        },
+        {
+          source: 'https://vkvideo.ru/video_ext.php?oid=-61782911&id=456241645&hash=baf76f901c14e7c1',
+          icon: 'vk',
+          title: 'VK Video'
+        },
+      ]
+    })
+  // Post Media 2
+  +Box({})
+    +PostMedia({
+      id: 'media-id-2',
+      title: 'BroConf 2025',
+      image: 'assets/images/public/post/swiper.jpg',
+    })
+  // Shorts Swiper
+  +Box({})
+    +SwiperMain(4, 'Шортсы', 'shorts')
+  // Post Media 3
+  +Box({})
+    +PostMedia({
+      id: 'media-id-3',
+      title: 'BroConf 2025',
+      image: 'assets/images/public/post/swiper-2.jpg',
+    })
+  // Ad Banner
+  +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-content.jpg', title: 'Рекламный баннер', type: 'content'})
+  // Post Media 4
+  +Box({})
+    +PostMedia({
+      id: 'media-id-4',
+      title: 'Подкаст №2',
+      subTitle: 'Наш второй подкаст',
+      type: 'video',
+      image: 'assets/images/public/media/2.jpg',
+      videos: [
+        {
+          source: 'https://www.youtube.com/embed/Dtfc27GfJtw',
+          icon: 'youtube',
+          title: 'YouTube'
+        },
+        {
+          source: 'https://vkvideo.ru/video_ext.php?oid=-61782911&id=456241645&hash=baf76f901c14e7c1',
+          icon: 'vk',
+          title: 'VK Video'
+        },
+      ]
+    })
+  // Ad Banner
+  +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-content-alt.jpg', title: 'Рекламный баннер', type: 'content'})
+  // Post Media 5
+  +Box({})
+    +PostMedia({
+      id: 'media-id-5',
+      title: 'Подкаст №3',
+      subTitle: 'Наш третий подкаст',
+      type: 'video',
+      image: 'assets/images/public/media/3.jpg',
+      videos: [
+        {
+          source: 'https://www.youtube.com/embed/Dtfc27GfJtw',
+          icon: 'youtube',
+          title: 'YouTube'
+        },
+        {
+          source: 'https://vkvideo.ru/video_ext.php?oid=-61782911&id=456241645&hash=baf76f901c14e7c1',
+          icon: 'vk',
+          title: 'VK Video'
+        },
+      ]
+    })
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    +Box({type: 'sidebar'})
+      span.sidebar_title Темы
+      +Topic([
+          { title: 'Подкасты', color: "#06B0FF", href: 'posts-topic.html' },
+          { title: 'Конференции', color: "#06FF82", href: '' },
+          { title: 'Обучение', color: "#FFB406", href: '' },
+          { title: 'Интервью', color: "#FF5506", href: '' },
+          { title: 'Обзор', color: "#FF0606", href: '' },
+          { title: 'Обучение', color: "#4D06FF", href: '' },
+          { title: 'Полезное', color: "#8BFF06", href: '' },
+          { title: 'Правила', color: "#FF0606", href: '' },
+          { title: 'Спор', color: "#FF9B06", href: '' },
+          { title: 'Журнал', color: "#06B0FF", href: '' },
+        ], 4)
+      span.sidebar_more Показать все
+    // Top Blogers
+    +Box({type: 'sidebar'})
+      span.sidebar_title Топ блогов:
+      .blogers-top.blogers-top-mini
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+      a.sidebar_more(href='#') Посмотреть весь топ
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+    // Popular Comments
+    +Box({type: 'sidebar'})
+      span.sidebar_title Популярные комментарии:
+      .comments-popular.comments-popular-mini
+        +CommentItem({})
+        +CommentItem({})
+        +CommentItem({})

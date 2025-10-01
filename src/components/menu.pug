@@ -1,0 +1,11 @@
+mixin MenuItem(item, index, active = null)
+  a.menu_item(href=item.href class=`${!item.icon ? 'no-icon' : ''}${active === index ? 'active' : ''}`)
+    if item.icon
+      svg.menu_icon(viewBox="0 0 24 24" width="24" height="24")
+        use(href=`assets/images/svg/menu-sprite.svg#menu-${item.icon}`)
+    span= item.title
+
+mixin Menu(menuItems, active, type = '')
+  .menu(class=type ? `menu-${type}` : '')
+    each item, index in menuItems
+      +MenuItem(item, index, active)

@@ -1,0 +1,66 @@
+mixin TableMain(count = 2, title = '', type = 'services')
+  - let i = 0
+  .table_wrapper(class=`table_wrapper-${type}`)
+    .table_title
+      h2.title.title-h2= title
+    .table(class=`table-${type}`)
+      .table_head(class=`table_head-${type}`)
+        if (type === 'services')
+          span.table_head_item Сервис
+          span.table_head_item Наименование
+          span.table_head_item Цена
+          span.table_head_item Скидка
+          span.table_head_item
+        else if (type === 'partners')
+          span.table_head_item №
+          span.table_head_item
+          span.table_head_item Наименование
+          span.table_head_item Отзывы
+          span.table_head_item Мин.
+      .table_items
+        while i < count
+          .table_item(class=`table_item-${type}${i === 2 ? ' table_item-commercial' : ''}`)
+            if (type === 'services')
+              a.table_item_col.table_item_logo(href="#")
+                img(src='assets/images/public/table/1.jpg', alt='PST.NET')
+              .table_item_col.table_item_name 
+                a(href="#") PST.NET
+                p Платежки для рекламы. Эксклюзивные бины к...
+              .table_item_col.table_item_price от 9$
+              .table_item_col 
+                +CopyTo('AFFCULT')
+              .table_item_col
+                +BtnPrime({text: 'Обзор', size: 'sm', mode: `${i === 2 ? 'commercial' : 'mini'}`})
+              .table_item_col
+                +BtnPrime({text: 'Сайт', size: 'sm', mode: `${i === 2 ? 'commercial' : 'mini'}`})
+            else if (type === 'partners')
+              span.table_item_col.table_item_num= i + 1
+              a.table_item_col.table_item_logo(href="#")
+                img(src='assets/images/public/table/2.jpg', alt='PST.NET')
+              .table_item_col.table_item_name 
+                a(href="#") ExGaming
+              .table_item_col
+                +ReviewStat('21 отзыв, рейтинг 10.0', {positive: 21, neutral: 0, negative: 5})
+              .table_item_col.table_item_price 150$
+              .table_item_col
+                +BtnPrime({text: 'На сайт', size: 'sm', mode: `${i === 2 ? 'commercial' : 'mini'}`})
+          - i++
+    a.table_more(href="#") Показать все...
+
+mixin TableInfluencers(items = [], title = 'Все инфлюенсеры')
+  - let i = 0
+  .table_wrapper(class=`table_wrapper-influencers`)
+    .table_title
+      h2.title.title-h2= title
+    .table(class=`table-influencers`)
+      .table_head(class=`table_head-influencers`)
+        span.table_head_item Инфлюенсер
+        span.table_head_item Подробнее
+      .table_items
+        each item, index in items
+          .table_item(class=`table_item-influencers${item.commercial === i ? ' table_item-commercial' : ''}`)
+            +InfluencerCard(item)
+          - i++
+    .table_footer
+      a.table_more(href="#") Показать все...
+      +Btn(`Запрос на добавление`, [`glass`, 'sm', 'f14'])

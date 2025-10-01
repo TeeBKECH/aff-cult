@@ -1,0 +1,54 @@
+// Базовые стили
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  color: $SHADOW-RITE;
+  line-height: 1.6;
+  background-color: $color-1;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  color: $SHADOW-RITE;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+}
+
+@import '@/styles/components/btn';
+@import '@/styles/components/header';
+@import '@/styles/components/container';
+@import '@/styles/components/logo';
+@import '@/styles/components/search';
+@import '@/styles/components/burger';
+@import '@/styles/components/topic';
+@import '@/styles/components/content';
+@import '@/styles/components/page';
+@import '@/styles/components/ad';
+@import '@/styles/components/footer';
+@import '@/styles/components/box';
+@import '@/styles/components/filters';
+@import '@/styles/components/main';
+@import '@/styles/components/menu';
+@import '@/styles/components/post';
+@import '@/styles/components/author';
+@import '@/styles/components/sidebar';
+@import '@/styles/components/reacts';
+@import '@/styles/components/conferences';
+@import '@/styles/components/swiper';
+@import '@/styles/components/title';
+@import '@/styles/components/shorts';
+@import '@/styles/components/table';
+@import '@/styles/components/copy';
+@import '@/styles/components/review';
+@import '@/styles/components/blogers';
+@import '@/styles/components/comments';
+@import '@/styles/components/influencer';

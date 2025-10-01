@@ -1,0 +1,39 @@
+.box {
+  background: $SACRED-LIGHT;
+  border-radius: 12px;
+  padding: 20px;
+
+  &_title {
+    &-topic {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &_topic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    opacity: 0.16;
+  }
+
+  &-shadow {
+    border: 1px solid $color-1;
+    box-shadow:
+      0 1px 4px rgba(#000, 0.12),
+      0 -20px 20px rgba($color-1, 1);
+  }
+
+  &-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

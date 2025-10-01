@@ -1,0 +1,164 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  width: fit-content;
+  text-decoration: none;
+  border-radius: 6px;
+  line-height: 1;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  flex: none;
+  font-family: $font-main;
+
+  &-default {
+    background: $color-1;
+    color: $CULT-VOID;
+    font-size: 18px;
+    padding: 0 24px;
+
+    &:hover {
+      color: $CULT-FLAME;
+      background: $color-12;
+    }
+  }
+
+  &-grad {
+    background-image: linear-gradient(to left, $CULT-FLAME, #ff9d4c);
+    background-size: 150% 100%;
+    background-position: 100% 0;
+    transition: all 0.5s ease-in-out;
+    padding: 0 34px;
+    font-size: 18px;
+    color: $SACRED-LIGHT;
+
+    &:hover {
+      background-position: 0 0;
+    }
+  }
+
+  &-second {
+    color: $SHADOW-RITE;
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+  &-flame {
+    background: $CULT-FLAME;
+    font-size: 18px;
+    padding: 16px 20px;
+    color: $SACRED-LIGHT;
+  }
+
+  &-sm {
+    height: 32px;
+  }
+
+  &-md {
+    height: 52px;
+  }
+
+  &-lg {
+  }
+
+  &-fw {
+    width: 100%;
+  }
+
+  &-br {
+    border-radius: 100px;
+  }
+
+  &-commercial {
+    background: $SACRED-LIGHT;
+    font-size: 12px;
+    padding: 10px;
+    color: $CULT-FLAME;
+    height: 28px;
+  }
+
+  &-mini {
+    color: $SHADOW-RITE;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 28px;
+  }
+
+  &--default {
+    background: #f5f4f3;
+    color: $SHADOW-RITE;
+
+    &:hover {
+      background: $color-12;
+      color: $CULT-FLAME;
+    }
+
+    &-alt {
+      background: $color-12;
+      color: $CULT-FLAME;
+
+      &:hover {
+        background: #f5f4f3;
+        color: $SHADOW-RITE;
+      }
+    }
+  }
+
+  &--primary {
+    background: $CULT-FLAME;
+    color: $SACRED-LIGHT;
+
+    &:hover {
+      background: $SPICE-EMBER;
+    }
+  }
+
+  &--commercial {
+    background: $SACRED-LIGHT;
+    font-size: 12px;
+    padding: 10px;
+    color: $CULT-FLAME;
+    height: 28px;
+  }
+
+  &--glass {
+    background: transparent;
+    color: $URBAN-STEEL;
+    border: 1px solid $URBAN-STEEL;
+  }
+
+  &--f18 {
+    font-size: 18px;
+  }
+
+  &--f16 {
+    font-size: 16px;
+  }
+
+  &--f14 {
+    font-size: 14px;
+  }
+
+  &--sm {
+    height: 32px;
+    padding: 0 12px;
+  }
+
+  &--lg {
+    height: 44px;
+    padding: 0 24px;
+
+    &-2 {
+      height: 44px;
+      padding: 0 16px;
+    }
+  }
+
+  &--fw {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,15 @@
+mixin TopicItem(item, index)
+  a.topic_item(href=item.href)&attributes(attributes)
+    .topic_item_icon(data-color=item.color)
+    span= item.title
+
+mixin Topic(topicData, viewCount)
+  .topic_wrapper
+    .topic_items
+      each item, index in topicData 
+        +TopicItem(item, index)(class=`${viewCount <= index ? 'hide' : ''}`)
+
+mixin TopicMobile()
+  .topic.topic_mobile
+    button.topic_icon
+      img(src="assets/images/svg/topic-icon.svg", alt="topic icons")

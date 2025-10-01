@@ -1,0 +1,18 @@
+mixin Author(props)
+  - const {href = '#', avatar, author, tag ='Google Ads', size = ''} = props
+  .author(class=`${size ? 'author-' + size : ''}`)
+    a.author_avatar(href=href, class=`avatar`)
+      img(src=avatar, alt=author)
+    a.author_name(href=href)= author
+    span.author_tag= tag
+
+mixin AuthorComment(props, size = 'sm')
+  - const {avatar = 'assets/images/svg/avatar.svg', authorName = "authorUrl", authorUrl = "#", postTitle = '', postUrl = "#"} = props
+  .author_comment(class=`author_comment-${size}`)
+    a.author_comment_avatar(href=authorUrl)
+      img(src=avatar, alt=authorName)
+    .author_comment_post
+      .author_comment_name_wrapper 
+        a.author_comment_name(href=authorUrl)= authorName
+        span.author_comment_type в посте
+      a.author_comment_title(href=postUrl)= postTitle

@@ -1,0 +1,6 @@
+mixin Sidebar(props)
+  - const position = props.pos || 'left'
+
+  aside.sidebar(class=`sidebar_${position}`) 
+    block
+    

@@ -1,0 +1,9 @@
+mixin Search(props)
+  //- - const fn = props?.fn || 'log'
+  //- - const placeholder = props?.placeholder || 'Найти...'
+  .search 
+    input.search_input#search_id(type="text", placeholder='Найти...')
+    span.search_icon
+  .search_modal
+    .search_overlay 
+    .search_result

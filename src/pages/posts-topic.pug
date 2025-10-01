@@ -1,0 +1,104 @@
+//- @title: Статьи По Теме
+//- @description: Описание Статей по теме
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow', topic: '#06B0FF'}, 'Google Ads')
+    +Filters(['Популярное', 'Обсуждаемое', 'Свежее'], 'Избранное')
+
+  // Popular Swiper
+  +Box({})
+    +SwiperMain(4, 'Популярное:')
+  
+  // Post 1
+  +Box({})
+    +Post({
+      title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+      text: ['Представьте: вы нашли рабочую связку для Google Ads, настроили кампании и готовы запускать — но аккаунт блокируют уже после первых $50 трат, сливая весь бюджет впустую.', 'Или вы покупаете пачку дешёвых аккаунтов, но они один за другим требуют сложную и иногда невозможную верификацию. Кампании встают, время уходит, а вы остаетесь с нулём на балансе и разбитыми надеждами.'],
+      preview: 'assets/images/public/post-preview.jpg',
+    })
+  
+  // Post 2
+  +Box({})
+    +Post({
+      title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+      text: ['Представьте: вы нашли рабочую связку для Google Ads, настроили кампании и готовы запускать — но аккаунт блокируют уже после первых $50 трат, сливая весь бюджет впустую. Или вы покупаете пачку дешёвых аккаунтов, но они один за другим требуют сложную и иногда невозможную верификацию. Кампании встают, время уходит, а вы остаетесь с нулём на балансе и разбитыми надеждами.'],
+      preview: 'assets/images/public/post-preview-2.jpg',
+    })
+
+  // Ad Banner
+  +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-content.jpg', title: 'Рекламный баннер', type: 'content'})
+
+  // Post 3
+  +Box({})
+    +Post({
+      title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+      text: ['Представьте: вы нашли рабочую связку для Google Ads, настроили кампании и готовы запускать — но аккаунт блокируют уже после первых $50 трат, сливая весь бюджет впустую. Или вы покупаете пачку дешёвых аккаунтов, но они один за другим требуют сложную и иногда невозможную верификацию. Кампании встают, время уходит, а вы остаетесь с нулём на балансе и разбитыми надеждами.'],
+      preview: 'assets/images/public/post-preview-3.jpg',
+    })
+
+  // Post 4
+  +Box({})
+    +Post({
+      title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+      text: ['Представьте: вы нашли рабочую связку для Google Ads, настроили кампании и готовы запускать — но аккаунт блокируют уже после первых $50 трат, сливая весь бюджет впустую. Или вы покупаете пачку дешёвых аккаунтов, но они один за другим требуют сложную и иногда невозможную верификацию. Кампании встают, время уходит, а вы остаетесь с нулём на балансе и разбитыми надеждами.'],
+      preview: 'assets/images/public/post-preview-4.jpg',
+    })
+
+  // Ad Banner
+  +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-content-alt.jpg', title: 'Рекламный баннер', type: 'content'})
+
+  // Post 5
+  +Box({})
+    +Post({
+      title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+      text: ['Представьте: вы нашли рабочую связку для Google Ads, настроили кампании и готовы запускать — но аккаунт блокируют уже после первых $50 трат, сливая весь бюджет впустую. Или вы покупаете пачку дешёвых аккаунтов, но они один за другим требуют сложную и иногда невозможную верификацию. Кампании встают, время уходит, а вы остаетесь с нулём на балансе и разбитыми надеждами.'],
+      preview: 'assets/images/public/post-preview-5.jpg',
+    })
+
+  // Post 6
+  +Box({})
+    +Post({
+      title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+      text: ['Представьте: вы нашли рабочую связку для Google Ads, настроили кампании и готовы запускать — но аккаунт блокируют уже после первых $50 трат, сливая весь бюджет впустую. Или вы покупаете пачку дешёвых аккаунтов, но они один за другим требуют сложную и иногда невозможную верификацию. Кампании встают, время уходит, а вы остаетесь с нулём на балансе и разбитыми надеждами.'],
+      preview: 'assets/images/public/post-preview-6.jpg',
+    })
+    
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    // Mini Posts
+    +Box({type: 'sidebar'})
+      span.sidebar_title Свежее:
+      .post_items.post_items-mini
+        +PostMini({
+          title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+        })
+        +PostMini({
+          title: 'Почему 80% арбитражников теряют свои деньги', 
+        })
+        +PostMini({
+          title: 'Почему 80% арбитражников', 
+        })
+      a.sidebar_more(href='#') Перейти в свежее
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+    // Top Blogers
+    +Box({type: 'sidebar'})
+      span.sidebar_title Топ блогов:
+      .blogers-top.blogers-top-mini
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+      a.sidebar_more(href='#') Посмотреть весь топ
+    // Popular Comments
+    +Box({type: 'sidebar'})
+      span.sidebar_title Популярные комментарии:
+      .comments-popular.comments-popular-mini
+        +CommentItem({})
+        +CommentItem({})
+        +CommentItem({})

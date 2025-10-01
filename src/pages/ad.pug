@@ -1,0 +1,24 @@
+//- @title: Реклама
+//- @description: Описание рекламы
+extends ../layouts/ad.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow'}, 'Реклама на сайте')
+    +Filters(['Все', 'Баннер в сайдбаре', 'Pop-up', 'Shorts', 'Кнопка', 'Баннер в статье'])
+  
+  // Ad Accordion
+  +Box({})
+    +AdAccordion({title: 'Баннер не в сайдбаре'})
+
+  // Ad Accordion
+  +Box({})
+    +AdAccordion({title: 'Баннер совсем не в сайдбаре'}, 'sm')
+
+  // Ad Accordion
+  +Box({})
+    +AdAccordion({title: 'Баннер вообще не в сайдбаре'})
+
+  // Ad Accordion
+  +Box({})
+    +AdAccordion({title: 'Баннер как бы в сайдбаре'})

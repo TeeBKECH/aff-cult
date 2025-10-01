@@ -1,0 +1,20 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &_title {
+    color: $SHADOW-RITE;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &_more {
+    font-size: 16px;
+    font-weight: 500;
+    color: $SHADOW-RITE;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

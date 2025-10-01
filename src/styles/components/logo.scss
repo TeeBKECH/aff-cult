@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-to(lg) {
+    width: 124px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &.sm {
+    width: 240px;
+  }
+}

@@ -1,0 +1,8 @@
+include ./button.pug
+
+mixin Filters(items, favourite)
+  .filters 
+    each item, index in items
+      button(class=`filters_item ${index === 0 ? 'active' : ''}`)= item
+    if favourite
+      button(class=`filters_item filters_item-default`)= favourite

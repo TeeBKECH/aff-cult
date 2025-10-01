@@ -1,0 +1,106 @@
+mixin Post(props)
+  - const {text = [], title = '', preview, url = 'post-full.html'} = props
+  article.post 
+    .post_head
+      .post_author
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT'})
+      .post_date 5 сентбяря в 15:43
+      .post_subscribe 
+        +BtnPrime({text: 'Подписаться', size: 'sm', mode: 'second'})
+    h2.title.title-h2.post_title= title
+    .post_content 
+      .post_text
+        each txt in text 
+          p= txt
+      if preview
+        .post_preview 
+          img(src=preview, alt=title)
+    a.post_read_more(href=url) Читать далее...
+      
+    +Reacts([
+      {title: 'heart', icon: '❤️', fn: 'log', count: '41'},
+      {title: 'fire', icon: '🔥', fn: 'log', count: '3'},
+      {title: 'smile', icon: '😂', fn: 'log', count: '150'},
+    ], 'add')
+    +PostActions([
+      {title: 'Комментарии', icon: 'comment', fn: 'log', count: '18'},
+      {title: 'Добавить в избранное', icon: 'bookmarks', fn: 'log', count: '4'},
+      {title: 'Поделиться', icon: 'share', fn: 'log'},
+      {title: 'Просмотров поста', icon: 'views', count: '12K'},
+    ])
+
+mixin PostMini(props)
+  - const {text = [], title = '', preview, url = 'post-full.html'} = props
+  article.post.post-mini
+    .post_head
+      .post_author
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm'})
+      .post_date 15:43
+    a.title.title-h2.post_title(href=url)= title
+    +PostActions([
+      {title: 'Комментарии', icon: 'comment', fn: 'log', count: '18'},
+      {title: 'Добавить в избранное', icon: 'bookmarks', fn: 'log', count: '4'},
+      {title: 'Поделиться', icon: 'repost', fn: 'log'},
+      {title: 'Просмотров поста', icon: 'views', count: '12K'},
+    ])
+
+mixin PostSwiper(props)
+  - const {text = [], title = '', preview, url = 'post-full.html'} = props
+  article.post.post-swiper
+    .post_head
+      .post_author
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm' })
+      .post_date 15:43
+    a.title.title-h3.post_title(href=url)= title
+    .post_content 
+      .post_text
+        each txt in text 
+          p= txt
+      if preview
+        .post_preview 
+          img(src=preview, alt=title)
+    a.post_read_more(href=url) Читать далее...
+    +Reacts([
+      {title: 'heart', icon: '❤️', fn: 'log', count: '41'},
+      {title: 'fire', icon: '🔥', fn: 'log', count: '3'},
+      {title: 'smile', icon: '😂', fn: 'log', count: '150'},
+    ], 'add', 'sm')
+    +PostActions([
+      {title: 'Комментарии', icon: 'comment', fn: 'log', count: '18'},
+      {title: 'Добавить в избранное', icon: 'bookmarks', fn: 'log', count: '4'},
+      {title: 'Поделиться', icon: 'share', fn: 'log'},
+      {title: 'Просмотров поста', icon: 'views', count: '12K'},
+    ])
+
+mixin PostMedia(props)
+  - const {title = 'Заголовок', subTitle = '', type = 'img', image = 'assets/images/public/post-preview.jpg', videos = [], id = '1'} = props
+  article.post.post-media
+    .post_head
+      .post_author
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm'})
+      .post_date 15:43
+      .post_subscribe 
+        +BtnPrime({text: 'Подписаться', size: 'sm', mode: 'second'})
+    a.title.title-h2.post_title(href=url)= title
+    if (subTitle) 
+      p.post_subTitle= subTitle
+    .post_media(class=`post_media-${type}`)
+      .post_media_img
+        img(src=image, alt=title)
+        if (type === 'video')
+          .post_media_play
+            button.post_media_play_btn(data-fn-play-madia=id)
+    +Reacts([
+      {title: 'heart', icon: '❤️', fn: 'log', count: '41'},
+      {title: 'fire', icon: '🔥', fn: 'log', count: '3'},
+      {title: 'smile', icon: '😂', fn: 'log', count: '150'},
+    ], 'add')
+    +PostActions([
+      {title: 'Комментарии', icon: 'comment', fn: 'log', count: '18'},
+      {title: 'Добавить в избранное', icon: 'bookmarks', fn: 'log', count: '4'},
+      {title: 'Поделиться', icon: 'repost', fn: 'log'},
+      {title: 'Просмотров поста', icon: 'views', count: '12K'},
+    ])
+
+//- <iframe width="1236" height="695" src="https://www.youtube.com/embed/Dtfc27GfJtw" title="Новые фильмы с ДиКаприо, Макконахи, Марго Робби - большое кино вернулось (новости)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+//- <iframe src="https://vkvideo.ru/video_ext.php?oid=-61782911&id=456241645&hash=baf76f901c14e7c1" width="640" height="360" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>

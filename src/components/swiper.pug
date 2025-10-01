@@ -1,0 +1,39 @@
+mixin SwiperMain(count = 2, title = '', type = 'posts')
+  - let i = 0
+  .sWiper_wrapper.sWiper_wrapper_main
+    .sWiper_title
+      h2.title.title-h2= title
+      .sWiper_nav
+        button.sWiper_nav_item.sWiper_nav-prev
+        button.sWiper_nav_item.sWiper_nav-next
+    .swiper.sWiper
+      .swiper-wrapper
+        while i < count
+          .swiper-slide
+            if (type === 'posts')
+              +PostSwiper({
+                title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+                text: ['Представьте: вы нашли рабочую связку для Google Ads, настроили кампании и...'],
+                preview: 'assets/images/public/post-preview-2.jpg',
+              })
+            else if (type === 'shorts')
+              +ShortSwiper({
+                title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+                poster: 'assets/images/public/shorts/1.jpg',
+                short: 'assets/videos/short-video-1.mp4',
+              })
+          - i++
+
+mixin SwiperPost(count = 2)
+  - let i = 0
+  .sWiper_wrapper.sWiper_wrapper_post
+    .swiper_nav.swiper_nav-alt
+      button.sWiper_nav_item.sWiper_nav-prev
+      button.sWiper_nav_item.sWiper_nav-next
+    .swiper.sWiper.sWiper-post
+      .swiper-wrapper
+        while i < count
+          .swiper-slide
+            .post_swiper_item
+              img(src='assets/images/public/post/swiper.jpg', alt='Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads')
+          - i++

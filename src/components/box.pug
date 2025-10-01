@@ -1,0 +1,10 @@
+mixin Box(props, title = '')
+  - const {type = 'default', topic = ''} = props
+  .box(class=`box-${type}${title ? ' box-title' : ''}`)
+    if (title)
+      .box_title(class=`${topic ? 'box_title-topic' : ''}`)
+        if (topic)
+          .box_topic(data-color=`${topic}`)
+        h1.title.title-h1= title
+    if block
+      block

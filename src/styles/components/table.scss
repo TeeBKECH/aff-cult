@@ -1,0 +1,139 @@
+.table {
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &_head {
+    display: grid;
+    align-items: center;
+    background: #f5f4f3;
+    padding: 10px 12px;
+    border-radius: 8px 8px 0 0;
+
+    &-services {
+      grid-template-columns: 90px 148px 52px 50px 1fr;
+      gap: 8px;
+    }
+
+    &-partners {
+      grid-template-columns: 20px 88px 124px 140px auto;
+      gap: 16px;
+    }
+
+    &-influencers {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    &_item {
+      line-height: 1;
+      font-size: 14px;
+      color: $SHADOW-RITE;
+      font-weight: 300;
+    }
+  }
+
+  &_item {
+    display: grid;
+    align-items: center;
+    border: 1px solid $color-1;
+    padding: 10px 12px;
+    $item: &;
+
+    &:last-child {
+      border-radius: 0 0 8px 8px;
+    }
+
+    &_col {
+      display: flex;
+    }
+
+    &-services {
+      grid-template-columns: 90px 148px 52px auto auto auto;
+      gap: 8px;
+
+      #{$item}_name {
+        flex-direction: column;
+        gap: 4px;
+
+        a {
+          font-size: 16px;
+          line-height: 1;
+          color: $SHADOW-RITE;
+          font-weight: 700;
+          text-decoration: none;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 1.1;
+          color: $URBAN-STEEL;
+          font-weight: 400;
+        }
+      }
+
+      #{$item}_price {
+        font-size: 14px;
+        color: $SHADOW-RITE;
+        font-weight: 500;
+      }
+    }
+
+    &-partners {
+      grid-template-columns: 20px 88px 124px 140px 38px auto;
+      gap: 16px;
+
+      #{$item}_num {
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+        color: $SHADOW-RITE;
+        font-weight: 500;
+      }
+
+      #{$item}_name {
+        a {
+          font-size: 16px;
+          line-height: 1;
+          color: $SHADOW-RITE;
+          font-weight: 700;
+          text-decoration: none;
+        }
+      }
+
+      #{$item}_price {
+        font-size: 14px;
+        color: $SHADOW-RITE;
+        font-weight: 500;
+      }
+    }
+
+    &-influencers {
+      padding: 0;
+    }
+
+    &-commercial {
+      background: $color-12;
+      border-color: $color-12;
+    }
+  }
+
+  &_more {
+    font-size: 18px;
+    text-decoration: none;
+    color: $SHADOW-RITE;
+    line-height: 1;
+    font-weight: 500;
+  }
+
+  &_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}

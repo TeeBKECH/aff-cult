@@ -1,0 +1,64 @@
+include ../components/head.pug
+include ../components/sidebar.pug
+include ../components/ad.pug
+include ../components/box.pug
+include ../components/filters.pug
+include ../components/menu.pug
+include ../components/button.pug
+include ../components/logo.pug
+include ../components/search.pug
+include ../components/burger.pug
+include ../components/topic.pug
+include ../components/post.pug
+include ../components/author.pug
+include ../components/post-actions.pug
+include ../components/reacts.pug
+include ../components/conferences.pug
+include ../components/swiper.pug
+include ../components/shorts.pug
+include ../components/table.pug
+include ../components/copy-to.pug
+include ../components/review-stat.pug
+include ../components/comments.pug
+
+// SVG SPRITE
+include ../assets/images/svg/menu-sprite.svg
+
+doctype html
+html(lang="ru")
+  // page — объект из templateParameters (см. webpack.config.js)
+  +Head(page)
+
+  body
+    //- +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-top.jpg', title: 'Рекламный баннер'})
+    .page
+      include ../components/header.pug
+      .container.content.content-ad
+        +Sidebar({})
+          // Main Menu
+          +Box({})
+            +Menu([
+                { title: 'Статьи', href: 'posts.html', icon: 1 },
+                { title: 'Медиа', href: 'media.html', icon: 2 },
+                { title: 'Конференции', href: '#', icon: 3 },
+                { title: 'Партнерки', href: '#', icon: 4 },
+                { title: 'Сервисы', href: '#', icon: 5 },
+                { title: 'Инфлюенсеры', href: '#', icon: 6 },
+                { title: 'Вики', href: '#', icon: 7 },
+                { title: 'Арбитражные команды', href: '#', icon: 8 },
+                { title: 'Вакансии', href: '#', icon: 9 },
+                { title: 'Журнал', href: '#', icon: 10 },
+              ], 3)
+          // Ad Banner
+          +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-left.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+          // Alt Menu
+          +Box({})
+            +Menu([
+                { title: 'О проекте', href: '#' },
+                { title: 'Реклама', href: '#' },
+                { title: 'Правила', href: '#' }
+              ], 100, 'alt')
+        main.main.main-ad
+          block content
+      include ../components/footer.pug
+

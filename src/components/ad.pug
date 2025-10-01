@@ -1,0 +1,28 @@
+mixin AdBanner(props)
+
+  - const {type = 'top', href = '#', banner = '', title = 'Реклама'} = props
+ 
+  .ad_banner(class=`ad_banner-${type}`)
+    a.ad_banner_link(href=href, target="_blank", rel="nofollow", title=title)
+      img.ad_banner_img(src=banner, alt=title)
+
+mixin AdAccordion(props, size = 'full')
+  - const {title = 'Заголовок', price = '$390/мес.', text = 'Текст', type = 'full'} = props
+  .ad_accordion(class=`ad_accordion-${type}`)
+    .ad_accordion_head
+      .ad_accordion_title
+        h2.title.title-h2= title
+      .ad_accordion_price
+        +Btn(`Стоимость: ${price}`, ['default-alt', 'lg-2', 'f16'])
+      .ad_accordion_toggle
+        span.ad_accordion_toggle_text Подробнее
+        .ad_accordion_toggle_icon
+    .ad_accordion_body(class=`${size === 'sm' ? 'ad_accordion_body-sm' : ''}`)
+      .ad_accordion_content
+        .ad_accordion_text
+          p Кликабельный анимированный или статичный баннер представлен на каждой странице сайта и постоянно перед глазами пользователя даже при скролле любой из страниц на десктопе. Его видят все 100% посетителей сайта все время, что они находятся на сайте. В мобильной версии баннер расположен третьим блоком на главной странице сайта. В листингах он отображается сразу после закрепленных позиций и на страницах статей перед рекомендательным блоком внизу.
+        .ad_accordion_actions
+          if (size === 'sm')
+            +Btn(`Стоимость: ${price}`, ['default-alt', 'lg-2', 'f18'])
+          +Btn(`Посмотреть размеры`, ['primary', 'lg-2', 'f18', `${size !== 'sm' ? 'fw' : ''}`])
+      .ad_accordion_preview

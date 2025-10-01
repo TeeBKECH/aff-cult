@@ -1,0 +1,32 @@
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid $color-1;
+    color: $URBAN-STEEL;
+    padding: 0 12px;
+    height: 36px;
+    border-radius: 6px;
+    background: none;
+    cursor: pointer;
+
+    &.active {
+      background: $color-12;
+      color: $CULT-FLAME;
+      border-color: transparent;
+    }
+
+    &-default {
+      margin-left: auto;
+      color: $SHADOW-RITE;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+mixin React(item, size)
+  .react
+    button.react_btn(class=`${size ? 'react_btn-sm' : ''}`, data-react-fn=item.fn, title=item.title)
+      span.react_icon(class=`${size ? 'react_icon-sm' : ''}`)= item.icon
+      if (item.count)
+        span.react_count= item.count
+
+mixin ReactCompare(reacts)
+  - let result = 0
+  .react_compare
+    .react_compare_icons
+      each item in reacts
+        - result+= item.count
+        span.react_compare_icon= item.icon
+    span.react_compare_result= `${result} Реакций`
+
+mixin Reacts(reacts = [], add = null, size = '', type = 'default')
+  .reacts
+    if (type === 'default')
+      each item in reacts
+        +React(item, size)
+    else if (type === 'compare')
+      +ReactCompare(reacts)
+    if (add)
+      .react.react-alt
+        button.react_btn(class=`${size ? 'react_btn-sm' : ''}`, data-react-fn='add', title='Добавить реакцию')
+          span.react_icon(class=`${size ? 'react_icon-sm' : ''}`) +

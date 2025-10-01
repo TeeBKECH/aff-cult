@@ -1,0 +1,10 @@
+.content {
+  display: grid;
+  grid-template-columns: 308px minmax(0, 1fr) 308px;
+  gap: 16px;
+  padding: 16px 10px 155px;
+
+  &-ad {
+    grid-template-columns: 308px minmax(0, 1fr);
+  }
+}

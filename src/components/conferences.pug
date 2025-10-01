@@ -1,0 +1,40 @@
+mixin Conference(item, size)
+  article.conference(class=`${size ? 'conference-' + size : ''}${item.commercial ? ' conference-commercial' : ''}`)
+    .conference_dates
+      span.conference_dates_big= item.dates
+      span.conference_dates_small= item.mounth
+    .conference_preview
+      img(src=item.preview, alt=item.title)
+    .conference_content
+      a.conference_title(href=item.url)= item.title
+      .conference_location
+        b= item.city
+        span /
+        p= item.country
+      .conference_tags
+        each tag in item.tags
+          span.conference_tag= tag
+      .conference_actions
+        +BtnPrime({text: 'Подробнее', size: 'sm', mode: 'second'})
+        +BtnPrime({text: 'Промокод', size: 'sm', mode: 'second'})
+    if (size === 'mini')
+      .conference_actions.mini
+        +BtnPrime({text: 'Подробнее', size: 'sm', mode: `${item.commercial ? 'commercial' : 'mini'}`})
+        +BtnPrime({text: 'Промокод', size: 'sm', mode: `${item.commercial ? 'commercial' : 'mini'}`})
+
+mixin Conferences(items = [], size = '')
+  .conferences(class=`${size ? 'conferences-' + size : ''}`)
+    .conferences_title
+      if (size === 'mini')
+        span.sidebar_title Конференции:
+        button.conferences_calendar(data-fn-calendar-open='calendar-show')
+          svg.conferences_calendar_icon(viewBox="0 0 24 24" width="24" height="24")
+            use(href=`assets/images/svg/menu-sprite.svg#calendar-icon`)
+      else
+        h2.title.title-h2 Конференции:
+    .conferences_items
+      each item in items
+        +Conference(item, size)
+    .conferences_atcions
+      a.conferences_more(href="#") Показать все...
+    

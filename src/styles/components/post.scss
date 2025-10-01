@@ -1,0 +1,393 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  $post: &;
+
+  &_head {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  &_date {
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $SHADOW-RITE;
+    font-size: 14px;
+    font-weight: 400;
+    height: 24px;
+  }
+
+  &_subscribe {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &_subTitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: $SHADOW-RITE;
+    line-height: 1.5;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    a {
+      color: $CULT-FLAME;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    ul,
+    ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      li {
+        font-size: 18px;
+        color: $SHADOW-RITE;
+        line-height: 1.4;
+        position: relative;
+        padding-left: 14px;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 6px;
+          background: $CULT-FLAME;
+          position: absolute;
+          left: 0;
+          top: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &-alt {
+      padding: 20px;
+      border-radius: 8px;
+      background: rgba($CULT-FLAME, 0.08);
+
+      p {
+        color: $CULT-FLAME;
+        font-size: 16px;
+        font-style: italic;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &_preview {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &_read_more {
+    font-size: 18px;
+    font-weight: 500;
+    color: $SHADOW-RITE;
+    text-decoration: none;
+  }
+
+  &_items {
+    display: flex;
+    flex-direction: column;
+
+    &-mini {
+      gap: 16px;
+    }
+  }
+
+  &_actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &_action {
+    $action: &;
+    &_icon {
+      color: $SHADOW-RITE;
+    }
+    &_count {
+      color: $SHADOW-RITE;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1;
+    }
+    &_views {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    &_btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        #{$action}_count,
+        #{$action}_icon {
+          color: $CULT-FLAME;
+        }
+      }
+    }
+
+    &-alt {
+      margin-left: auto;
+    }
+  }
+
+  &-mini {
+    gap: 20px;
+
+    &:not(:last-of-type) {
+      padding-bottom: 16px;
+      border-bottom: 1px solid $color-1;
+    }
+
+    #{$post}_head {
+      justify-content: space-between;
+    }
+
+    #{$post}_title {
+      color: $SHADOW-RITE;
+      font-size: 16px;
+      line-height: 1.3;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s linear;
+
+      &:hover {
+        color: $CULT-FLAME;
+      }
+    }
+
+    #{$post}_actions {
+      gap: 12px;
+    }
+
+    #{$post}_action {
+      &_btn,
+      &_views {
+        gap: 4px;
+      }
+
+      &_icon {
+        width: 16px;
+        height: 16px;
+      }
+      &_count {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-swiper {
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid $color-1;
+
+    #{$post}_head {
+      justify-content: space-between;
+    }
+
+    #{$post}_title {
+      text-decoration: none;
+
+      &:hover {
+        color: $CULT-FLAME;
+      }
+    }
+
+    #{$post}_content {
+      gap: 20px;
+    }
+
+    #{$post}_text {
+      p {
+        font-size: 16px;
+      }
+    }
+
+    #{$post}_preview {
+      aspect-ratio: 1/1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    #{$post}_actions {
+      gap: 12px;
+    }
+
+    #{$post}_action {
+      &_btn,
+      &_views {
+        gap: 4px;
+      }
+
+      &_icon {
+        width: 16px;
+        height: 16px;
+      }
+      &_count {
+        font-size: 14px;
+      }
+    }
+
+    #{$post}_read_more {
+      // font-size: 18px;
+      // font-weight: 500;
+      // color: $SHADOW-RITE;
+      // text-decoration: none;
+    }
+  }
+
+  &-full {
+    #{$post}_swiper {
+      &_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    #{$post}_article {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      &_part {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &_img {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          img {
+            border-radius: 8px;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 1.3;
+          }
+        }
+      }
+    }
+    #{$post}_text {
+    }
+  }
+
+  &-media {
+    #{$post}_media {
+      &_img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &-video {
+      }
+
+      &-img {
+      }
+
+      &_play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+
+        &_btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          outline: none;
+          width: 64px;
+          height: 64px;
+          cursor: pointer;
+          position: relative;
+          background: none;
+          transition: all 0.2s linear;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 64px;
+            height: 45px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg width='64' height='46' viewBox='0 0 64 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M61.5054 4.34592C59.1952 1.5997 54.93 0.479492 46.7842 0.479492H17.2152C8.88299 0.479492 4.54544 1.67196 2.24392 4.59573C0 7.44641 0 11.6467 0 17.4599V28.54C0 39.8021 2.6624 45.5202 17.2152 45.5202H46.7844C53.8484 45.5202 57.7627 44.5317 60.295 42.1082C62.892 39.6229 64 35.5651 64 28.54V17.4599C64 11.3294 63.8264 7.10432 61.5054 4.34592ZM41.0882 24.5297L27.661 31.5472C27.3464 31.7118 26.9945 31.7925 26.6396 31.7814C26.2846 31.7703 25.9386 31.6678 25.6348 31.4838C25.3311 31.2998 25.0799 31.0406 24.9057 30.7311C24.7315 30.4217 24.64 30.0725 24.6402 29.7174V15.7274C24.6402 15.3728 24.7316 15.0242 24.9054 14.7152C25.0793 14.4061 25.3298 14.1471 25.6329 13.963C25.936 13.7789 26.2813 13.676 26.6357 13.6641C26.9901 13.6523 27.3416 13.7319 27.6563 13.8953L41.0835 20.8676C41.4186 21.0416 41.6996 21.3042 41.8958 21.6268C42.0921 21.9494 42.1961 22.3196 42.1966 22.6972C42.1971 23.0748 42.094 23.4453 41.8986 23.7684C41.7032 24.0915 41.4229 24.3548 41.0882 24.5297Z' fill='%23FE6E00'/%3E%3Cpath opacity='0.96' d='M41.0886 24.5298L27.6614 31.5473C27.3468 31.7119 26.995 31.7926 26.64 31.7815C26.2851 31.7704 25.939 31.6679 25.6352 31.4839C25.3315 31.2999 25.0803 31.0407 24.9061 30.7312C24.7319 30.4218 24.6404 30.0726 24.6406 29.7175V15.7275C24.6406 15.3729 24.732 15.0243 24.9059 14.7153C25.0797 14.4062 25.3303 14.1472 25.6333 13.9631C25.9364 13.779 26.2818 13.6761 26.6361 13.6642C26.9905 13.6524 27.342 13.732 27.6567 13.8954L41.0839 20.8677C41.419 21.0417 41.7 21.3043 41.8962 21.6269C42.0925 21.9495 42.1966 22.3197 42.197 22.6973C42.1975 23.0749 42.0945 23.4454 41.899 23.7685C41.7036 24.0916 41.4233 24.3549 41.0886 24.5298Z' fill='%23FDFDFD'/%3E%3C/svg%3E");
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}

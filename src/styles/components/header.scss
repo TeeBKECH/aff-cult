@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  padding: 3.5px 0;
+  background: $IRON-FAITH;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  @include respond-to(lg) {
+    padding: 20px 0;
+  }
+
+  &_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &_actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+}

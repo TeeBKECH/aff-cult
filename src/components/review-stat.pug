@@ -1,0 +1,7 @@
+mixin ReviewStat(text, props)
+  .review-stat
+    span.review-stat_text= text
+    .review-stat_values
+      .review-stat_value.review-stat_value-positive= props.positive
+      .review-stat_value.review-stat_value-neutral= props.neutral
+      .review-stat_value.review-stat_value-negative= props.negative
