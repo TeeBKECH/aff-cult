@@ -1,9 +1,12 @@
-mixin TableMain(count = 2, title = '', type = 'services')
+mixin TableMain(count = 2, title = '', type = 'services', subTitle = '', commercial = false)
   - let i = 0
   .table_wrapper(class=`table_wrapper-${type}`)
     .table_title
       h2.title.title-h2= title
-    .table(class=`table-${type}`)
+      if (subTitle)
+        .table_subTitle
+          p.subTitle= subTitle
+    .table(class=`table-${type}${commercial ? ' table-commercial' : ''}`)
       .table_head(class=`table_head-${type}`)
         if (type === 'services')
           span.table_head_item Сервис
@@ -30,9 +33,9 @@ mixin TableMain(count = 2, title = '', type = 'services')
               .table_item_col 
                 +CopyTo('AFFCULT')
               .table_item_col
-                +BtnPrime({text: 'Обзор', size: 'sm', mode: `${i === 2 ? 'commercial' : 'mini'}`})
+                +BtnPrime({text: 'Обзор', size: 'sm', mode: `${i === 2 || commercial ? 'commercial' : 'mini'}`})
               .table_item_col
-                +BtnPrime({text: 'Сайт', size: 'sm', mode: `${i === 2 ? 'commercial' : 'mini'}`})
+                +BtnPrime({text: 'Сайт', size: 'sm', mode: `${i === 2 || commercial ? 'commercial' : 'mini'}`})
             else if (type === 'partners')
               span.table_item_col.table_item_num= i + 1
               a.table_item_col.table_item_logo(href="#")

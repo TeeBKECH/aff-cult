@@ -15,23 +15,23 @@ mixin Conference(item, size)
         each tag in item.tags
           span.conference_tag= tag
       .conference_actions
-        +BtnPrime({text: 'Подробнее', size: 'sm', mode: 'second'})
-        +BtnPrime({text: 'Промокод', size: 'sm', mode: 'second'})
+        +Btn(`Подробнее`, [`${item.commercial ? 'default-alt' : 'default'}`, 'sm', 'f14'])
+        +Btn(`Промокод`, [`${item.commercial ? 'default-alt' : 'default'}`, 'sm', 'f14'])
     if (size === 'mini')
       .conference_actions.mini
-        +BtnPrime({text: 'Подробнее', size: 'sm', mode: `${item.commercial ? 'commercial' : 'mini'}`})
-        +BtnPrime({text: 'Промокод', size: 'sm', mode: `${item.commercial ? 'commercial' : 'mini'}`})
+        +Btn(`Подробнее`, [`${item.commercial ? 'commercial' : 'default'}`, 'mini', 'f14'])
+        +Btn(`Промокод`, [`${item.commercial ? 'commercial' : 'default'}`, 'mini', 'f14'])
 
-mixin Conferences(items = [], size = '')
+mixin Conferences(items = [], size = '', title = 'Конференции:')
   .conferences(class=`${size ? 'conferences-' + size : ''}`)
     .conferences_title
       if (size === 'mini')
-        span.sidebar_title Конференции:
+        span.sidebar_title= title
         button.conferences_calendar(data-fn-calendar-open='calendar-show')
           svg.conferences_calendar_icon(viewBox="0 0 24 24" width="24" height="24")
             use(href=`assets/images/svg/menu-sprite.svg#calendar-icon`)
       else
-        h2.title.title-h2 Конференции:
+        h2.title.title-h2= title
     .conferences_items
       each item in items
         +Conference(item, size)

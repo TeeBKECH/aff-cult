@@ -23,6 +23,12 @@ img {
   display: block;
 }
 
+.hashtag {
+  color: $CULT-FLAME;
+  font-size: 16px;
+  text-decoration: none;
+}
+
 @import '@/styles/components/btn';
 @import '@/styles/components/header';
 @import '@/styles/components/container';
@@ -52,3 +58,7 @@ img {
 @import '@/styles/components/blogers';
 @import '@/styles/components/comments';
 @import '@/styles/components/influencer';
+@import '@/styles/components/socials';
+@import '@/styles/components/services';
+@import '@/styles/components/single';
+@import '@/styles/components/calendar';

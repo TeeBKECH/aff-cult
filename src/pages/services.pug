@@ -1,0 +1,51 @@
+//- @title: Сервисы
+//- @description: Описание Сервисов
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow'}, 'Сервисы')
+    +Filters(['Все', 'Популярные', 'Новые'])
+
+  // Services Table
+  +Box({})
+    +TableMain(5, 'Проверенные сервисы для вебмастера', 'services', '', true)
+
+  // Services Table
+  +Box({})
+    +TableMain(5, 'Антидетект-браузеры')
+
+  // Services Table
+  +Box({})
+    +TableMain(5, 'Spy сервисы')
+
+  // Services Table
+  +Box({})
+    +TableMain(5, 'Платежки для арбитража')
+
+  // Services Table
+  +Box({})
+    +TableMain(5, 'Клоакинг')
+
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    +Box({type: 'sidebar'})
+      span.sidebar_title Темы
+      +Topic([
+          { title: 'Арбитраж трафика', color: "#06B0FF", href: 'services-topic.html' },
+          { title: 'Платежные решения', color: "#06FF82", href: 'services-topic.html' },
+          { title: 'Маркетинг', color: "#FFB406", href: 'services-topic.html' },
+          { title: 'SEO', color: "#FF5506", href: 'services-topic.html' },
+          { title: 'SMM', color: "#FF0606", href: 'services-topic.html' },
+          { title: 'Мобильные приложения', color: "#4D06FF", href: 'services-topic.html' },
+          { title: 'Планирование и менеджеент', color: "#8BFF06", href: 'services-topic.html' },
+          { title: 'Дизайн', color: "#FF0606", href: 'services-topic.html' },
+          { title: 'e-Commerce', color: "#FF9B06", href: 'services-topic.html' },
+          { title: 'Журнал', color: "#06B0FF", href: 'services-topic.html' },
+        ], 7)
+      span.sidebar_more Показать все
+    

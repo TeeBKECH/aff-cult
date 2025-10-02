@@ -1,8 +1,15 @@
 .table {
+  $table: &;
   &_wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  &_title {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   &_head {
@@ -135,5 +142,15 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+  }
+
+  &-commercial {
+    #{$table}_head {
+      background: $color-12;
+    }
+    #{$table}_item {
+      background: $color-12;
+      border-color: $color-12;
+    }
   }
 }

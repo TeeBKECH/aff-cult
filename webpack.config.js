@@ -160,7 +160,10 @@ export default {
       },
       {
         test: /\.css$/i,
-        include: [path.resolve(__dirname, 'node_modules/swiper')], // без exclude!
+        include: [
+          path.resolve(__dirname, 'node_modules/swiper'),
+          path.resolve(__dirname, 'node_modules/air-datepicker'),
+        ], // без exclude!
         use: ['style-loader', 'css-loader'],
         sideEffects: true,
       },

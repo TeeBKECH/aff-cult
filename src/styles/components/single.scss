@@ -1,0 +1,46 @@
+.single {
+  &_topic {
+    &_content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      a {
+        color: $CULT-FLAME;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      ul,
+      ol {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        li {
+          font-size: 18px;
+          color: $SHADOW-RITE;
+          line-height: 1.4;
+          position: relative;
+          padding-left: 14px;
+
+          &::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            background: $CULT-FLAME;
+            position: absolute;
+            left: 0;
+            top: 10px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

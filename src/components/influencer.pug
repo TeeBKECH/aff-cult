@@ -1,9 +1,9 @@
 mixin InfluencerCard(props)
   .influencer_card(class=`${props.commercial ? 'influencer_card-commercial' : ''}`)
-    a.influencer_card_img(href="#")
+    a.influencer_card_img(href="influencer-full.html")
       img(src=`${props.img ? props.img : 'assets/images/public/infl/1.jpg' }`, alt=props.title)
     .influencer_card_info
-      a.influencer_card_name(href='#', class=`${props.verify ? 'influencer_card_name-verify' : ''}`)
+      a.influencer_card_name(href='influencer-full.html', class=`${props.verify ? 'influencer_card_name-verify' : ''}`)
         span= props.title
       .influencer_card_tags
         each item, index in props.tags ? props.tags : []

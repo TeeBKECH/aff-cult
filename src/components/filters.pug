@@ -1,8 +1,128 @@
-include ./button.pug
-
 mixin Filters(items, favourite)
   .filters 
     each item, index in items
       button(class=`filters_item ${index === 0 ? 'active' : ''}`)= item
     if favourite
       button(class=`filters_item filters_item-default`)= favourite
+
+mixin FiltersAlt()
+  .filters-alt 
+    .filters_items
+      input.filters_checkbox#calendar-id(type='checkbox', name='filters')
+      label.filters_item.filters_item-calendar(for="calendar-id")
+        svg.filters_item-calendar_icon(viewBox="0 0 20 20" width="20" height="20")
+          use(href=`assets/images/svg/menu-sprite.svg#calendar-icon`)
+      input.filters_checkbox#topics-id(type='checkbox', name='filters')
+      label.filters_item.filters_item-arrow(for="topics-id")
+        span Тематика
+      input.filters_checkbox#country-id(type='checkbox', name='filters')
+      label.filters_item.filters_item-arrow(for="country-id")
+        span Страна
+      input.filters_checkbox#city-id(type='checkbox', name='filters')
+      label.filters_item.filters_item-arrow(for="city-id")
+        span Город
+      input.filters_checkbox#type-id(type='checkbox', name='filters')
+      label.filters_item.filters_item-arrow(for="type-id")
+        span Тип
+      a.filters_item.filters_item-past(href="#") Прошедшие
+        
+    .filters_body
+      .filters_content(data-filters-id='calendar-id')
+        .filters_content_wrapper.filters_content_wrapper-calendar
+          .filters_content_calendar
+            .filters_content_title.filters_content_title-alt
+              span.title.title-h3 Тематика
+              .calendar_nav
+                button.calendar_nav_item.calendar_nav-prev
+                button.calendar_nav_item.calendar_nav-next
+            .calendar_inputs
+              input#calendar-input-from(type='text', placeholder='01.01.2025')
+              input#calendar-input-to(type='text', placeholder='01.01.2025')
+            //-   span.title.title-h3 Тематика
+          .filters_content_event
+
+      .filters_content(data-filters-id='topics-id')
+        .filters_content_wrapper
+          .filters_content_title
+            span.title.title-h3 Тематика
+          .filters_content_checkboxes
+            input.filters_content_checkbox#topic-all(type='checkbox', name='topic', checked)
+            label.filters_content_label(for="topic-all") Все
+              span 51 
+            input.filters_content_checkbox#topic-seo(type='checkbox', name='topic')
+            label.filters_content_label(for="topic-seo") SEO
+              span 12 
+            input.filters_content_checkbox#topic-mobile(type='checkbox', name='topic')
+            label.filters_content_label(for="topic-mobile") Mobile
+              span 33
+          .filters_content_actions
+            +Btn(`Применить`, [`primary`, 'md', 'f16'])
+
+      .filters_content(data-filters-id='country-id')
+        .filters_content_wrapper
+          .filters_content_title
+            span.title.title-h3 Страна
+          .filters_content_checkboxes
+            input.filters_content_checkbox#country-all(type='checkbox', name='country', checked)
+            label.filters_content_label(for="country-all") Все
+              span 51 
+            input.filters_content_checkbox#country-russia(type='checkbox', name='country')
+            label.filters_content_label(for="country-russia") Россия
+              span 12 
+            input.filters_content_checkbox#country-belarus(type='checkbox', name='country')
+            label.filters_content_label(for="country-belarus") Беларусь
+              span 2
+            input.filters_content_checkbox#country-germany(type='checkbox', name='country')
+            label.filters_content_label(for="country-germany") Германия
+              span 4
+            input.filters_content_checkbox#country-france(type='checkbox', name='country')
+            label.filters_content_label(for="country-france") Франция
+              span 1
+            input.filters_content_checkbox#country-kazakh(type='checkbox', name='country')
+            label.filters_content_label(for="country-kazakh") Казахстан
+              span 6
+            input.filters_content_checkbox#country-usa(type='checkbox', name='country')
+            label.filters_content_label(for="country-usa") США
+              span 32
+          .filters_content_actions
+            +Btn(`Применить`, [`primary`, 'md', 'f16'])
+
+      .filters_content(data-filters-id='city-id')
+        .filters_content_wrapper
+          .filters_content_title
+            span.title.title-h3 Город
+          .filters_content_checkboxes
+            input.filters_content_checkbox#city-all(type='checkbox', name='city', checked)
+            label.filters_content_label(for="city-all") Все
+              span 12 
+            input.filters_content_checkbox#city-russia(type='checkbox', name='city')
+            label.filters_content_label(for="city-russia") Россия
+              span 3
+            input.filters_content_checkbox#city-belarus(type='checkbox', name='city')
+            label.filters_content_label(for="city-belarus") Беларусь
+              span 4
+            input.filters_content_checkbox#city-germany(type='checkbox', name='city')
+            label.filters_content_label(for="city-germany") Германия
+              span 5
+          .filters_content_actions
+            +Btn(`Применить`, [`primary`, 'md', 'f16'])
+
+      .filters_content(data-filters-id='type-id')
+        .filters_content_wrapper
+          .filters_content_title
+            span.title.title-h3 Тип
+          .filters_content_checkboxes
+            input.filters_content_checkbox#type-all(type='checkbox', name='type', checked)
+            label.filters_content_label(for="type-all") Все
+              span 12 
+            input.filters_content_checkbox#type-russia(type='checkbox', name='type')
+            label.filters_content_label(for="type-russia") Россия
+              span 3
+            input.filters_content_checkbox#type-belarus(type='checkbox', name='type')
+            label.filters_content_label(for="type-belarus") Беларусь
+              span 4
+            input.filters_content_checkbox#type-germany(type='checkbox', name='type')
+            label.filters_content_label(for="type-germany") Германия
+              span 5
+          .filters_content_actions
+            +Btn(`Применить`, [`primary`, 'md', 'f16'])

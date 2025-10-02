@@ -21,6 +21,7 @@ include ../components/copy-to.pug
 include ../components/review-stat.pug
 include ../components/comments.pug
 include ../components/influencer.pug
+include ../components/socials.pug
 
 // SVG SPRITE
 include ../assets/images/svg/menu-sprite.svg
@@ -42,14 +43,14 @@ html(lang="ru")
             +Menu([
                 { title: 'Статьи', href: 'posts.html', icon: 1 },
                 { title: 'Медиа', href: 'media.html', icon: 2 },
-                { title: 'Конференции', href: '#', icon: 3 },
-                { title: 'Партнерки', href: '#', icon: 4 },
-                { title: 'Сервисы', href: '#', icon: 5 },
+                { title: 'Конференции', href: 'conferences.html', icon: 3 },
+                { title: 'Партнерки', href: 'partners.html', icon: 4 },
+                { title: 'Сервисы', href: 'services.html', icon: 5 },
                 { title: 'Инфлюенсеры', href: 'influencers.html', icon: 6 },
-                { title: 'Вики', href: '#', icon: 7 },
-                { title: 'Арбитражные команды', href: '#', icon: 8 },
-                { title: 'Вакансии', href: '#', icon: 9 },
-                { title: 'Журнал', href: '#', icon: 10 },
+                { title: 'Вики', href: 'wiki.html', icon: 7 },
+                { title: 'Арбитражные команды', href: 'commands.html', icon: 8 },
+                { title: 'Вакансии', href: 'vacancies.html', icon: 9 },
+                { title: 'Журнал', href: 'magazine.html', icon: 10 },
               ], 3)
           // Ad Banner
           +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-left.jpg', title: 'Рекламный баннер', type: 'sidebar'})

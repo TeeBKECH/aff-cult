@@ -1,0 +1,91 @@
+//- @title: Инфлюенсер
+//- @description: Описание Инфлюенсера
+extends ../layouts/default.pug
+
+block content
+  
+  // Influencer Full
+  +Box({})
+    .influencer_full
+      .influencer_full_top
+        +Btn(`Все инфлюенсеры`, [`go-back`, 'md', 'f16'])
+      .influencer_full_content
+        .influencer_full_info
+          .influencer_full_img
+            img(src='assets/images/public/infl/1.jpg', alt='Александр Дужников')
+          .influencer_full_about
+            h1.influencer_full_name.influencer_full_name-verify
+              span Александр Дужников
+            .influencer_full_specs
+              .influencer_full_spec 
+                p Специализация:
+                .influencer_full_tags
+                  span.influencer_full_tag Медиабаинг
+              .influencer_full_spec 
+                p Вертикали / тип трафика
+                .influencer_full_tags
+                  span.influencer_full_tag Медиабаинг
+            p.influencer_full_exp
+              span Стаж в арбитраже: 
+              | более 15 лет
+            .influencer_full_socials
+              +Socials([
+                {icon: 'tg-2'},
+                {icon: 'insta-2'},
+                {icon: 'youtube-2'},
+                {icon: 'vk-2'}
+              ])
+        .influencer_full_text_wrapper
+          h2.title.title-h2 Об инфлюенсере
+          .influencer_full_text
+            p В 2016 году Александр начал заниматься арбитражем — работал со спам-рассылками в соцсетях. В 2017 году работал с Facebook и белой товаркой, заработал первые полмиллиона рублей в арбитраже. Работал и в командах, и на самого себя. За 7 лет Александр работал с товаркой, нутрой, инфобизнесом, гемблингом. Основной источник трафика — Facebook.
+            p В 2018 году участвовал в Бизнес молодости и запускал свой бизнес в товарке. Об этом периоде сам Александр говорит так: «Понял, что это инфоцыганство. История с товаркой — это была задача по развитию сторителлинга».
+            p Vibe CPA — команда с нуля. Александр был овнером команды Vibe CPA, для которой лично искал и отбирал сотрудников. Команда существовала около года.
+          a.influencer_full_text_hashtags(href="#") #гемблинг
+  
+  // Partners Table
+  +Box({})
+    +TableMain(3, 'Беттинг партнерки:', 'partners', 'Беттинг партнерки с ЦУПИС офферами — это партнерские программы БК, которые работают по лицензии ФНС России. Эти партнерки отличаются от оффшорных: — размером выплат; — требованиям рекламодателей; — ограничениями по гео (принимается трафик только из РФ); По статистике, ЦУПИС')
+
+  // Services Table
+  +Box({})
+    +TableMain(2, 'Платежки для арбитража')
+
+  // Post 2
+  +Box({})
+    +Post({
+      title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+      text: ['Представьте: вы нашли рабочую связку для Google Ads, настроили кампании и готовы запускать — но аккаунт блокируют уже после первых $50 трат, сливая весь бюджет впустую. Или вы покупаете пачку дешёвых аккаунтов, но они один за другим требуют сложную и иногда невозможную верификацию. Кампании встают, время уходит, а вы остаетесь с нулём на балансе и разбитыми надеждами.'],
+      preview: 'assets/images/public/post-preview-2.jpg',
+    })
+
+  // Post Media 1
+  +Box({})
+    +PostMedia({
+      id: 'media-id-1',
+      title: 'Подкаст №1',
+      subTitle: 'Наш первый подкаст',
+      type: 'video',
+      image: 'assets/images/public/media/1.jpg',
+      videos: [
+        {
+          source: 'https://www.youtube.com/embed/Dtfc27GfJtw',
+          icon: 'youtube',
+          title: 'YouTube'
+        },
+        {
+          source: 'https://vkvideo.ru/video_ext.php?oid=-61782911&id=456241645&hash=baf76f901c14e7c1',
+          icon: 'vk',
+          title: 'VK Video'
+        },
+      ]
+    })
+
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})

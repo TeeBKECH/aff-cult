@@ -1,0 +1,49 @@
+//- @title: Партнерки
+//- @description: Описание Партнерок
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow'}, 'Партнерки')
+    +Filters(['Все', 'Популярные', 'Новые'])
+
+  // Partners Table
+  +Box({})
+    +TableMain(5, 'Гемблинг', 'partners', 'Гемблинг партнерки – это партнерские программы от различных интернет-казино. Зарабатывать можно приводя игроков и получая процент от проигранных ими денег. Обычно эти игроки закрепляются за вебмастером навсегда и приносят пассивный доход в дальнейшем. Подходят сайты разных')
+
+  // Partners Table
+  +Box({})
+    +TableMain(5, 'CPA сети', 'partners', 'Партнерки, работающие по модели CPA обычно оплачивают какое-либо действие пользователей на сайте рекламодателя. Под этим действием может подразумеваться заявка, покупка, регистрация, заполнение формы и т.д. Ниша крайне широка и активно развивается, сложно назвать тематику сайта, которая не монетизир...')
+ 
+  // Partners Table
+  +Box({})
+    +TableMain(5, 'Беттинг партнерки', 'partners', 'Беттинг партнерки с ЦУПИС офферами — это партнерские программы БК, которые работают по лицензии ФНС России. Эти партнерки отличаются от оффшорных: — размером выплат; — требованиям рекламодателей; — ограничениями по гео (принимается трафик только из РФ); По статистике, ЦУПИС')
+  
+  // Partners Table
+  +Box({})
+    +TableMain(5, 'Мобильные CPA', 'partners', 'Партнерские программы для мобильного трафика с оплатой за установку или действие. Установки (или инсталлы) приложений и игр происходят из официальных магазинов AppStore или Google Play. Такие партнерки хорошо подходят для монетизации wap сайтов, сообществ в социальных сетях и')
+
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    +Box({type: 'sidebar'})
+      span.sidebar_title Темы
+      +Topic([
+          { title: 'Гемблинг', color: "#06B0FF", href: 'partners-topic.html' },
+          { title: 'CPA сети', color: "#06FF82", href: 'partners-topic.html' },
+          { title: 'Беттинг', color: "#FFB406", href: 'partners-topic.html' },
+          { title: 'Мобильные CPA', color: "#FF5506", href: 'partners-topic.html' },
+          { title: 'Push рекламные сети', color: "#FF0606", href: 'partners-topic.html' },
+          { title: 'Дейтинг', color: "#4D06FF", href: 'partners-topic.html' },
+          { title: 'mVAS', color: "#8BFF06", href: 'partners-topic.html' },
+          { title: 'Бинарные опционы', color: "#FF0606", href: 'partners-topic.html' },
+          { title: 'e-Commerce', color: "#FF9B06", href: 'partners-topic.html' },
+          { title: 'Журнал', color: "#06B0FF", href: 'partners-topic.html' },
+        ], 7)
+      span.sidebar_more Показать все
+      
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})

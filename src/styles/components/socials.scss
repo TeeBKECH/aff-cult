@@ -1,0 +1,15 @@
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &_item {
+    width: 24px;
+    height: 24px;
+    background: $SHADOW-RITE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

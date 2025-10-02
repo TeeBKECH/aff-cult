@@ -1,0 +1,6 @@
+mixin Socials(items)
+  .socials
+    each item in items
+      a.socials_item(href='#')
+        svg.socials_item_icon(viewBox="0 0 12 13" width="12" height="13")
+          use(href=`assets/images/svg/menu-sprite.svg#${item.icon}`)

@@ -1,6 +1,8 @@
 import { topicIconColor } from '@/scripts/components/topic.js'
 import { initSwipers } from '@/scripts/components/swiper.js'
 import { accordionsInit } from '@/scripts/components/accordion.js'
+import { filtersHandler } from '@/scripts/components/filters.js'
+import { calendarInit } from '@/scripts/components/calendar.js'
 
 import { truncateAccordionText } from '@/scripts/utils/truncText.js'
 
@@ -30,6 +32,10 @@ const initScripts = () => {
   initSwipers()
   // Accordions Init
   accordionsInit()
+  // Filters
+  filtersHandler()
+  // Calendar
+  calendarInit()
 }
 
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -44,6 +50,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   // Пример использования
   truncateAccordionText('.influencer_card_description', 70, {
+    showText: 'Показать все...',
+    hideText: 'Скрыть',
+    btnClass: 'influencer_card_description_more',
+  })
+
+  // Пример использования
+  truncateAccordionText('.table_subTitle', 140, {
     showText: 'Показать все...',
     hideText: 'Скрыть',
     btnClass: 'influencer_card_description_more',

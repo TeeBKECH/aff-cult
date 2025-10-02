@@ -1,4 +1,4 @@
-mixin Box(props, title = '')
+mixin Box(props, title = '', subTitle = '')
   - const {type = 'default', topic = ''} = props
   .box(class=`box-${type}${title ? ' box-title' : ''}`)
     if (title)
@@ -6,5 +6,7 @@ mixin Box(props, title = '')
         if (topic)
           .box_topic(data-color=`${topic}`)
         h1.title.title-h1= title
+        if (subTitle)
+          p.subTitle= subTitle
     if block
       block
