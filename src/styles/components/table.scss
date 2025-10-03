@@ -18,7 +18,6 @@
 
   &_head {
     width: 100%;
-    min-width: 592px;
     display: grid;
     align-items: center;
     background: #f5f4f3;
@@ -28,11 +27,13 @@
     &-services {
       grid-template-columns: 90px 148px 52px 50px 1fr;
       gap: 8px;
+      min-width: 592px;
     }
 
     &-partners {
       grid-template-columns: 20px 88px 124px 140px auto;
       gap: 16px;
+      min-width: 592px;
     }
 
     &-influencers {
@@ -50,8 +51,16 @@
     }
   }
 
-  &_items {
-    min-width: 592px;
+  &-services {
+    #{$table}_items {
+      min-width: 592px;
+    }
+  }
+
+  &-partners {
+    #{$table}_items {
+      min-width: 592px;
+    }
   }
 
   &_item {

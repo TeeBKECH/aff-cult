@@ -8,11 +8,30 @@
     border-color: $SACRED-LIGHT;
     $card: &;
 
+    @include respond-to(xl) {
+      grid-template-columns: 90px 1fr 82px;
+      gap: 12px;
+    }
+
+    @include respond-to(sm) {
+      grid-template-columns: 1fr 82px;
+      align-items: flex-start;
+    }
+
     &_img {
       width: 100%;
       height: 116px;
       border-radius: 6px;
       overflow: hidden;
+
+      @include respond-to(xl) {
+        aspect-ratio: 1/1;
+        height: unset;
+      }
+
+      @include respond-to(sm) {
+        width: 200px;
+      }
 
       img {
         width: 100%;
@@ -25,6 +44,11 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+
+      @include respond-to(sm) {
+        grid-column: 1/3;
+        grid-row: 2/3;
+      }
     }
 
     &_name {
@@ -33,6 +57,10 @@
       color: $SHADOW-RITE;
       text-decoration: none;
       line-height: 1;
+
+      @include respond-to(xl) {
+        font-size: 20px;
+      }
 
       span {
       }
@@ -119,12 +147,24 @@
       flex-direction: column;
       gap: 48px;
       padding-top: 20px;
+
+      @include respond-to(sm) {
+        gap: 20px;
+      }
     }
 
     &_info {
       display: grid;
       grid-template-columns: 208px 1fr;
       gap: 12px;
+
+      @include respond-to(xl) {
+        grid-template-columns: 140px 1fr;
+      }
+
+      @include respond-to(sm) {
+        grid-template-columns: 1fr;
+      }
     }
 
     &_name {
@@ -155,6 +195,11 @@
       aspect-ratio: 1/1;
       border-radius: 6px;
       overflow: hidden;
+
+      @include respond-to(sm) {
+        width: 100%;
+        max-width: 200px;
+      }
 
       img {
         width: 100%;
@@ -230,6 +275,10 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
+
+        @include respond-to(sm) {
+          gap: 16px;
+        }
       }
 
       &_hashtags {
