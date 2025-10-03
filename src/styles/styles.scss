@@ -1,3 +1,4 @@
+@import 'air-datepicker/air-datepicker.css';
 // Базовые стили
 * {
   margin: 0;
@@ -5,11 +6,19 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font-main;
   color: $SHADOW-RITE;
   line-height: 1.6;
   background-color: $color-1;
+
+  &.noscroll {
+    overflow-y: hidden;
+  }
 }
 
 p {
@@ -17,6 +26,10 @@ p {
   font-weight: 400;
   color: $SHADOW-RITE;
   line-height: 1.5;
+
+  @include respond-to(md) {
+    font-size: 16px;
+  }
 }
 
 img {
@@ -62,3 +75,5 @@ img {
 @import '@/styles/components/services';
 @import '@/styles/components/single';
 @import '@/styles/components/calendar';
+@import '@/styles/components/wiki';
+@import '@/styles/components/modal';

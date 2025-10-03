@@ -22,6 +22,30 @@ mixin Conference(item, size)
         +Btn(`Подробнее`, [`${item.commercial ? 'commercial' : 'default'}`, 'mini', 'f14'])
         +Btn(`Промокод`, [`${item.commercial ? 'commercial' : 'default'}`, 'mini', 'f14'])
 
+mixin ConferenceMAin(item)
+  article.conference(class=`conference-commercial conference-main conference-mini`)
+    h3.title.title-h3.conference-main_title Главное событие
+    .conference_dates
+      span.conference_dates_big= item.dates
+      span.conference_dates_small= item.mounth
+    .conference_preview
+      img(src=item.preview, alt=item.title)
+    .conference_content
+      a.conference_title(href=item.url)= item.title
+      .conference_location
+        b= item.city
+        span /
+        p= item.country
+      .conference_tags
+        each tag in item.tags
+          span.conference_tag= tag
+      .conference_actions
+        +Btn(`Подробнее`, [`${item.commercial ? 'default-alt' : 'default'}`, 'sm', 'f14'])
+        +Btn(`Промокод`, [`${item.commercial ? 'default-alt' : 'default'}`, 'sm', 'f14'])
+    .conference_actions.mini
+      +Btn(`Подробнее`, [`${item.commercial ? 'commercial' : 'default'}`, 'mini', 'f14'])
+      +Btn(`Промокод`, [`${item.commercial ? 'commercial' : 'default'}`, 'mini', 'f14'])
+
 mixin Conferences(items = [], size = '', title = 'Конференции:')
   .conferences(class=`${size ? 'conferences-' + size : ''}`)
     .conferences_title

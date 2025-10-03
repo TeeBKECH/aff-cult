@@ -1,0 +1,42 @@
+//- @title: Wiki
+//- @description: Описание Wiki
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow', action: 'switcher'}, 'Словарь арбитражника')
+    +WikiLetters('en')
+  
+  // A
+  +Box({})
+    +Wiki('A', [
+      'A/B test (А/Б тест, сплит-тест)',
+      'API (Application Programming Interface)',
+      'ASO (App Store Optimization)',
+      'Account (Акк или Аккаунт)',
+    ])
+  // B
+  +Box({})
+    +Wiki('B', [
+      'Banner (Баннер)',
+      'Banner Ad (Баннерная реклама)',
+      'Banner Blindness (Баннерная слепота)',
+      'Banner Traffic (Баннерный трафик)',
+    ])
+  // C
+  +Box({})
+    +Wiki('C', [
+      'COD (Cash on Delivery)',
+      'COS (Cost of sale)',
+      'CPA (Cost per acquisition)',
+      'CPC (Cost per Click)',
+    ])
+  
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    +Box({type: 'sidebar'})
+      span.sidebar_title Популярные слова:

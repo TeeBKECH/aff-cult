@@ -3,6 +3,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
+  @include respond-to(md) {
+    gap: 6px;
+  }
 }
 
 .react {
@@ -13,8 +17,16 @@
     line-height: 1;
     font-family: 'Noto Color Emoji', sans-serif;
 
+    @include respond-to(md) {
+      font-size: 16px;
+    }
+
     &-sm {
       font-size: 14px;
+
+      @include respond-to(md) {
+        font-size: 12px;
+      }
     }
   }
 

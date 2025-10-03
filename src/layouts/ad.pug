@@ -20,10 +20,8 @@ include ../components/table.pug
 include ../components/copy-to.pug
 include ../components/review-stat.pug
 include ../components/comments.pug
-
 // SVG SPRITE
 include ../assets/images/svg/menu-sprite.svg
-
 doctype html
 html(lang="ru")
   // page — объект из templateParameters (см. webpack.config.js)
@@ -31,6 +29,7 @@ html(lang="ru")
 
   body
     //- +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-top.jpg', title: 'Рекламный баннер'})
+    
     .page
       include ../components/header.pug
       .container.content.content-ad

@@ -4,6 +4,10 @@
   gap: 32px;
   $post: &;
 
+  @include respond-to(md) {
+    gap: 20px;
+  }
+
   &_head {
     width: 100%;
     display: flex;
@@ -21,6 +25,10 @@
     font-size: 14px;
     font-weight: 400;
     height: 24px;
+
+    @include respond-to(xl) {
+      font-size: 12px;
+    }
   }
 
   &_subscribe {
@@ -69,6 +77,10 @@
         position: relative;
         padding-left: 14px;
 
+        @include respond-to(md) {
+          font-size: 16px;
+        }
+
         &::before {
           content: '';
           display: block;
@@ -113,6 +125,10 @@
     font-weight: 500;
     color: $SHADOW-RITE;
     text-decoration: none;
+
+    @include respond-to(md) {
+      font-size: 16px;
+    }
   }
 
   &_items {
@@ -160,6 +176,13 @@
         #{$action}_count,
         #{$action}_icon {
           color: $CULT-FLAME;
+        }
+      }
+
+      svg {
+        @include respond-to(md) {
+          width: 20px;
+          height: 20px;
         }
       }
     }
@@ -219,6 +242,10 @@
     padding: 20px;
     border-radius: 8px;
     border: 1px solid $color-1;
+
+    @include respond-to(lg) {
+      padding: 12px;
+    }
 
     #{$post}_head {
       justify-content: space-between;
@@ -386,6 +413,59 @@
           &:hover {
             opacity: 0.8;
           }
+        }
+      }
+    }
+  }
+
+  &-search {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-decoration: none;
+
+    #{$post}_actions {
+      width: fit-content;
+    }
+
+    #{$post}_action {
+      &_btn,
+      &_views {
+        gap: 4px;
+      }
+
+      &_icon {
+        width: 16px;
+        height: 16px;
+      }
+      &_count {
+        font-size: 14px;
+      }
+    }
+
+    #{$post}_search {
+      &_content {
+        display: grid;
+        grid-template-columns: 1fr 80px;
+        gap: 16px;
+      }
+
+      &_title {
+        color: $SHADOW-RITE;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      &_preview {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        border-radius: 4px;
+
+        img {
+          width: 100%;
+          height: auto;
         }
       }
     }

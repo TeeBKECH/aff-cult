@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: 16px;
 
+  @include respond-to(lg) {
+    display: none;
+  }
+
   &_title {
     color: $SHADOW-RITE;
     font-size: 18px;

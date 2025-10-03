@@ -1,10 +1,10 @@
 header.header
   .container.header_container
-    +Burger({fn: 'mobile'})
+    +Burger({fn: 'mobile-menu'})
     +Logo()
     +TopicMobile()
-    +Search()
+    +Search({})
     .header_actions
-      +BtnPrime({text: 'Лучшие карты', mode: 'grad', br: true})
-      +BtnLink({text: 'Войти', br: true})
+      +Btn(`Лучшие карты`, ['grad', 'rounded', 'lg', 'f18'])
+      +Btn(`Войти`, ['default', 'rounded', 'lg', 'f18'])
 

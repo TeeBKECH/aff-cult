@@ -11,5 +11,5 @@ mixin Topic(topicData, viewCount)
 
 mixin TopicMobile()
   .topic.topic_mobile
-    button.topic_icon
+    button.topic_icon(data-modal-action="toggle" data-modal='mobile-topic')
       img(src="assets/images/svg/topic-icon.svg", alt="topic icons")

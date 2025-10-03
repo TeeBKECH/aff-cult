@@ -131,6 +131,22 @@
     border: 1px solid $URBAN-STEEL;
   }
 
+  &--grad {
+    background-image: linear-gradient(to left, $CULT-FLAME, #ff9d4c);
+    background-size: 150% 100%;
+    background-position: 100% 0;
+    transition: all 0.5s ease-in-out;
+    color: $SACRED-LIGHT;
+
+    &:hover {
+      background-position: 0 0;
+    }
+  }
+
+  &--rounded {
+    border-radius: 50px;
+  }
+
   &--f18 {
     font-size: 18px;
   }
@@ -141,6 +157,10 @@
 
   &--f14 {
     font-size: 14px;
+  }
+
+  &--f12 {
+    font-size: 12px;
   }
 
   &--sm {

@@ -6,7 +6,7 @@ mixin Post(props)
         +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT'})
       .post_date 5 сентбяря в 15:43
       .post_subscribe 
-        +BtnPrime({text: 'Подписаться', size: 'sm', mode: 'second'})
+        +Btn(`Подписаться`, ['default', 'sm', 'f12'])
     h2.title.title-h2.post_title= title
     .post_content 
       .post_text
@@ -41,6 +41,19 @@ mixin PostMini(props)
       {title: 'Комментарии', icon: 'comment', fn: 'log', count: '18'},
       {title: 'Добавить в избранное', icon: 'bookmarks', fn: 'log', count: '4'},
       {title: 'Поделиться', icon: 'repost', fn: 'log'},
+      {title: 'Просмотров поста', icon: 'views', count: '12K'},
+    ])
+
+mixin PostSearch(props)
+  - const {title = '', preview, url = 'post-full.html'} = props
+  a.post.post-search(href=url)
+    .post_search_content
+      p.post_search_title(href=url)= title
+      .post_search_preview
+        img(src=preview, alt=title)
+    +PostActions([
+      {title: 'Комментарии', icon: 'comment', fn: 'log', count: '18'},
+      {title: 'Добавить в избранное', icon: 'bookmarks', fn: 'log', count: '4'},
       {title: 'Просмотров поста', icon: 'views', count: '12K'},
     ])
 

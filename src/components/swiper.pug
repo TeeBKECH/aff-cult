@@ -37,3 +37,29 @@ mixin SwiperPost(count = 2)
             .post_swiper_item
               img(src='assets/images/public/post/swiper.jpg', alt='Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads')
           - i++
+
+mixin SwiperConferencies(count = 3, title = '', commercial = false)
+  - let i = 0
+  .sWiper_wrapper.sWiper_wrapper-conferencies
+    .sWiper_title
+      h2.title.title-h2(class=`${commercial ? 'title-commercial' : ''}`)= title
+      .swiper_nav.swiper_nav-conferencies(class=`${commercial ? 'swiper_nav-commercial' : ''}`)
+        button.sWiper_nav_item.sWiper_nav-prev
+        button.sWiper_nav_item.sWiper_nav-next
+    .swiper.sWiper.sWiper-conferencies
+      .swiper-wrapper
+        while i < count
+          .swiper-slide
+            +Conference({
+                dates: '11-12',
+                mounth: 'сентября',
+                title: 'Affiliate Moscow 2025',
+                country: 'Россия',
+                city: 'Москва',
+                tags: ['Affiliate', 'Marketing'],
+                url: '#',
+                promocode: 'XpDrTx',
+                preview: 'assets/images/public/conf/1.jpg',
+                commercial: true
+              })
+          - i++

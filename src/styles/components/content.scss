@@ -4,6 +4,15 @@
   gap: 16px;
   padding: 16px 10px 155px;
 
+  @include respond-to(xl) {
+    grid-template-columns: 268px minmax(0, 1fr) 268px;
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px 8px 75px;
+  }
+
   &-ad {
     grid-template-columns: 308px minmax(0, 1fr);
   }

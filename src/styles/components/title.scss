@@ -9,10 +9,18 @@
 
   &-h2 {
     font-size: 24px;
+
+    @include respond-to(md) {
+      font-size: 20px;
+    }
   }
 
   &-h3 {
     font-size: 18px;
+  }
+
+  &-commercial {
+    color: $CULT-FLAME;
   }
 }
 

@@ -172,11 +172,11 @@ export default {
         use: [{ loader: 'pug-loader', options: { pretty: true } }],
       },
       // JPEG/JPG — не инлайнить, всегда файл
-      {
-        test: /\.jpe?g$/i,
-        type: 'asset/resource',
-        generator: { filename: 'assets/images/[name][ext]' }, // без хэшей — чтобы совпадали с .webp
-      },
+      // {
+      //   test: /\.jpe?g$/i,
+      //   type: 'asset/resource',
+      //   generator: { filename: 'assets/images/[name][ext]' }, // без хэшей — чтобы совпадали с .webp
+      // },
 
       // PNG/WEBP/SVG — не трогаем (svg вообще никак не оптимизируем)
       // можно инлайнить до 8kb, при желании число подстрой
@@ -206,7 +206,7 @@ export default {
       patterns: [{ from: 'src/assets', to: 'assets', noErrorOnMissing: true }],
     }),
     // Подмена jpg → webp только на продакшн-сборке
-    ...(isProd ? [new ReplaceJpgToWebpPlugin()] : []),
+    // ...(isProd ? [new ReplaceJpgToWebpPlugin()] : []),
     ...(isProd ? [new HtmlPrettifyPlugin()] : []),
   ],
 
@@ -273,20 +273,20 @@ export default {
       // }),
 
       // Только для JPEG/JPG генерируем .webp (размеры не меняем)
-      new ImageMinimizerPlugin({
-        test: /\.jpe?g$/i,
-        generator: [
-          {
-            type: 'asset',
-            implementation: ImageMinimizerPlugin.sharpGenerate,
-            options: {
-              encodeOptions: { webp: { quality: 75 } }, // подстрой, если нужно
-            },
-            // Кладём рядом с оригиналом, без хэшей — чтобы легко заменить ссылку
-            filename: 'assets/images/[name].webp',
-          },
-        ],
-      }),
+      // new ImageMinimizerPlugin({
+      //   test: /\.jpe?g$/i,
+      //   generator: [
+      //     {
+      //       type: 'asset',
+      //       implementation: ImageMinimizerPlugin.sharpGenerate,
+      //       options: {
+      //         encodeOptions: { webp: { quality: 75 } }, // подстрой, если нужно
+      //       },
+      //       // Кладём рядом с оригиналом, без хэшей — чтобы легко заменить ссылку
+      //       filename: 'assets/images/[name].webp',
+      //     },
+      //   ],
+      // }),
     ],
   },
 

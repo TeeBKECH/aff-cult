@@ -3,7 +3,8 @@ mixin Filters(items, favourite)
     each item, index in items
       button(class=`filters_item ${index === 0 ? 'active' : ''}`)= item
     if favourite
-      button(class=`filters_item filters_item-default`)= favourite
+      button(class=`filters_item filters_item-default`)
+        span= favourite
 
 mixin FiltersAlt()
   .filters-alt 
@@ -40,6 +41,18 @@ mixin FiltersAlt()
               input#calendar-input-to(type='text', placeholder='01.01.2025')
             //-   span.title.title-h3 Тематика
           .filters_content_event
+            +ConferenceMAin({
+              dates: '11-12',
+              mounth: 'сентября',
+              title: 'Affiliate Moscow 2025',
+              country: 'Россия',
+              city: 'Москва',
+              tags: ['Affiliate', 'Marketing'],
+              url: '#',
+              promocode: 'XpDrTx',
+              preview: 'assets/images/public/conf/1.jpg',
+              commercial: true
+            })
 
       .filters_content(data-filters-id='topics-id')
         .filters_content_wrapper

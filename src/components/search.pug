@@ -1,9 +1,42 @@
 mixin Search(props)
   //- - const fn = props?.fn || 'log'
   //- - const placeholder = props?.placeholder || 'Найти...'
-  .search 
-    input.search_input#search_id(type="text", placeholder='Найти...')
+  .search(class=`${props.modal ? 'search-modal' : ''}`)
+    input.search_input#search_id(type="text", placeholder='Найти...', data-modal-on-focus=`${props.modal ? '' : 'search-results'}`)
     span.search_icon
-  .search_modal
-    .search_overlay 
-    .search_result
+
+mixin SearchResults(props)
+  .search_results(id="search-results")
+    .search_results_row
+      .search_results_title
+        span Последние запросы
+        button.search_results_clear Очистить
+      .search_results_items
+        .search_results_item.search_results_item-icon
+          span Google Ads
+        .search_results_item.search_results_item-icon
+          span Подкаст
+        .search_results_item.search_results_item-icon
+          span Конференция
+      button.search_results_more Показать все...
+    .search_results_items
+      .search_results_title
+        span Просмотренные посты
+        button.search_results_clear Очистить
+      .search_results_items
+        .search_results_item.search_results_item-post
+          +PostSearch({
+            title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+            preview: 'assets/images/public/post-preview.jpg',
+          })
+        .search_results_item.search_results_item-post
+          +PostSearch({
+            title: 'Почему 80% арбитражников ', 
+            preview: 'assets/images/public/post-preview-3.jpg',
+          })
+        .search_results_item.search_results_item-post
+          +PostSearch({
+            title: 'Почему свои деньги на старте запуска РК в Google Ads', 
+            preview: 'assets/images/public/post-preview-2.jpg',
+          })
+      button.search_results_more Показать все...

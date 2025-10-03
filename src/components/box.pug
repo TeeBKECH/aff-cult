@@ -1,11 +1,16 @@
 mixin Box(props, title = '', subTitle = '')
-  - const {type = 'default', topic = ''} = props
+  - const {type = 'default', topic = '', action = ''} = props
   .box(class=`box-${type}${title ? ' box-title' : ''}`)
     if (title)
-      .box_title(class=`${topic ? 'box_title-topic' : ''}`)
+      .box_title(class=`${topic ? 'box_title-topic' : ''}${action ? ' box_title-' + action : ''}`)
         if (topic)
           .box_topic(data-color=`${topic}`)
         h1.title.title-h1= title
+        if (action === 'switcher')
+          .wiki_switcher
+            a.wiki_switcher_item(href='#') Русский
+            span.wiki_switcher_sep /
+            span.wiki_switcher_item.wiki_switcher_item-current English
         if (subTitle)
           p.subTitle= subTitle
     if block

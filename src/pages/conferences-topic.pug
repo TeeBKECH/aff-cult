@@ -1,0 +1,153 @@
+//- @title: Конференции
+//- @description: Описание конференций
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow', topic: '#06B0FF'}, 'Affilate конференции')
+    +FiltersAlt()
+
+  // Conferences
+  +Box({type: 'commercial'})
+    +SwiperConferencies(3, 'Стоить посетить:', true)
+  
+  // Conferences
+  +Box({})
+    +Conferences([
+      {
+        dates: '11-12',
+        mounth: 'сентября',
+        title: 'Affiliate Moscow 2025',
+        country: 'Россия',
+        city: 'Москва',
+        tags: ['Affiliate', 'Marketing'],
+        url: '#',
+        promocode: 'XpDrTx',
+        preview: 'assets/images/public/conf/1.jpg',
+        commercial: true
+      },
+      {
+        dates: '25-31',
+        mounth: 'Мая',
+        title: 'Affiliate Moscow 2026',
+        country: 'Россия',
+        city: 'Краснодар',
+        tags: ['Affiliate'],
+        url: '#',
+        promocode: 'MpIRTs',
+        preview: 'assets/images/public/conf/2.jpg'
+      },
+      {
+        dates: '01-10',
+        mounth: 'Декабрь',
+        title: 'Affiliate Moscow 2026',
+        country: 'Россия',
+        city: 'Тверь',
+        tags: ['Affiliate', 'Marketing', 'Google'],
+        url: '#',
+        promocode: '123pFd',
+        preview: 'assets/images/public/conf/3.jpg'
+      },
+    ], '', 'Сентябрь, 2025')
+
+  // Conferences
+  +Box({})
+    +Conferences([
+      {
+        dates: '11-12',
+        mounth: 'сентября',
+        title: 'Affiliate Moscow 2025',
+        country: 'Россия',
+        city: 'Москва',
+        tags: ['Affiliate', 'Marketing'],
+        url: '#',
+        promocode: 'XpDrTx',
+        preview: 'assets/images/public/conf/1.jpg',
+        
+      },
+      {
+        dates: '25-31',
+        mounth: 'Мая',
+        title: 'Affiliate Moscow 2026',
+        country: 'Россия',
+        city: 'Краснодар',
+        tags: ['Affiliate'],
+        url: '#',
+        promocode: 'MpIRTs',
+        preview: 'assets/images/public/conf/2.jpg',
+        commercial: true
+      },
+      {
+        dates: '01-10',
+        mounth: 'Декабрь',
+        title: 'Affiliate Moscow 2026',
+        country: 'Россия',
+        city: 'Тверь',
+        tags: ['Affiliate', 'Marketing', 'Google'],
+        url: '#',
+        promocode: '123pFd',
+        preview: 'assets/images/public/conf/3.jpg'
+      },
+    ], '', 'Октябрь, 2025')
+
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    +Box({type: 'sidebar'})
+      span.sidebar_title Тематика
+      +Topic([
+          { title: 'SEO', color: "#06B0FF", href: 'conferences-topic.html' },
+          { title: 'Mobile', color: "#06FF82", href: 'conferences-topic.html' },
+          { title: 'Blockchain', color: "#FFB406", href: 'conferences-topic.html' },
+          { title: 'Affilate', color: "#FF5506", href: 'conferences-topic.html' },
+          { title: 'Marketing', color: "#FF0606", href: 'conferences-topic.html' },
+          { title: 'IT', color: "#4D06FF", href: 'conferences-topic.html' },
+          { title: 'Social Media', color: "#8BFF06", href: 'conferences-topic.html' },
+          { title: 'Digital', color: "#FF0606", href: 'conferences-topic.html' },
+          { title: 'iGaming', color: "#FF9B06", href: 'conferences-topic.html' },
+          { title: 'Журнал', color: "#06B0FF", href: 'conferences-topic.html' },
+        ], 7)
+      span.sidebar_more Показать все
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+    // Conferences Mini
+    +Box({})
+      +Conferences([
+        {
+          dates: '11-12',
+          mounth: 'сентября',
+          title: 'Affiliate Moscow 2025',
+          country: 'Россия',
+          city: 'Москва',
+          tags: ['Affiliate', 'Marketing'],
+          url: '#',
+          promocode: 'XpDrTx',
+          preview: 'assets/images/public/conf/1.jpg',
+          commercial: true
+        },
+        {
+          dates: '25-31',
+          mounth: 'Мая',
+          title: 'Affiliate Moscow 2026',
+          country: 'Россия',
+          city: 'Краснодар',
+          tags: ['Affiliate'],
+          url: '#',
+          promocode: 'MpIRTs',
+          preview: 'assets/images/public/conf/2.jpg'
+        },
+        {
+          dates: '01-10',
+          mounth: 'Декабрь',
+          title: 'Affiliate Moscow 2026',
+          country: 'Россия',
+          city: 'Тверь',
+          tags: ['Affiliate', 'Marketing', 'Google'],
+          url: '#',
+          promocode: '123pFd',
+          preview: 'assets/images/public/conf/3.jpg'
+        },
+      ], 'mini')

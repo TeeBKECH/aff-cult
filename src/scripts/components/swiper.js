@@ -29,10 +29,14 @@ export function initSwipers() {
             slidesPerView: 1.2,
             spaceBetween: 24,
           },
-          768: {
-            slidesPerView: 1.5,
+          576: {
+            slidesPerView: 2,
           },
           992: {
+            slidesPerView: 1.3,
+            spaceBetween: 16,
+          },
+          1200: {
             slidesPerView: 2,
             spaceBetween: 16,
           },
@@ -78,6 +82,33 @@ export function initSwipers() {
             spaceBetween: 16,
           },
         },
+        // Navigation arrows
+        navigation: {
+          nextEl: nextArrow,
+          prevEl: prevArrow,
+        },
+      })
+    })
+  }
+
+  const conferenciesSwipers = document.querySelectorAll('.sWiper_wrapper-conferencies')
+  if (conferenciesSwipers?.length > 0) {
+    conferenciesSwipers.forEach((swpr) => {
+      const currentSwiper = swpr.querySelector('.sWiper')
+      const prevArrow = swpr.querySelector('.sWiper_nav-prev')
+      const nextArrow = swpr.querySelector('.sWiper_nav-next')
+      const confSwiper = new Swiper(currentSwiper, {
+        modules: [Navigation],
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: false,
+        loop: false,
+        lazy: true,
+        ResizeObserver: false,
+        // autoplay: {
+        //   delay: 5500,
+        //   disableOnInteraction: false,
+        // },
         // Navigation arrows
         navigation: {
           nextEl: nextArrow,

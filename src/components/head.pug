@@ -7,3 +7,5 @@ mixin Head(props)
     if props && props.description
       meta(name="description" content=props.description)
     title #{(props && props.title) ? props.title : 'Мой проект'}
+  // SVG SPRITE
+  include ../assets/images/svg/menu-sprite.svg

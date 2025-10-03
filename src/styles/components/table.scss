@@ -1,5 +1,9 @@
 .table {
+  width: 100%;
+  overflow-x: auto; /* Горизонтальный скролл */
+  -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
   $table: &;
+
   &_wrapper {
     display: flex;
     flex-direction: column;
@@ -13,6 +17,8 @@
   }
 
   &_head {
+    width: 100%;
+    min-width: 592px;
     display: grid;
     align-items: center;
     background: #f5f4f3;
@@ -42,6 +48,10 @@
       color: $SHADOW-RITE;
       font-weight: 300;
     }
+  }
+
+  &_items {
+    min-width: 592px;
   }
 
   &_item {
