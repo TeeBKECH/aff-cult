@@ -81,6 +81,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
     onOpen: (modal) => console.log('Меню открыто'),
     onClose: (modal) => console.log('Меню закрыто'),
   })
+  registerModal('banner-sizes', {
+    closeOnBackdrop: true,
+    closeOnEscape: true,
+    exclusive: true,
+    onOpen: (modal) => console.log('Меню открыто'),
+    onClose: (modal) => console.log('Меню закрыто'),
+  })
   registerModal('search-results', {
     closeOnBackdrop: false, // Не закрывать при клике на бэкдроп
     closeOnEscape: true,

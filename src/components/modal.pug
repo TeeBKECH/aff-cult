@@ -1,5 +1,5 @@
-mixin Modal(modalId = '')
-  .modal(id=modalId)
+mixin Modal(modalId = '', pos = 'top')
+  .modal(id=modalId, class=`modal-${pos}`)
     .modal_overlay(data-close)
     .modal_content
       block

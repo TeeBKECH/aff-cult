@@ -10,8 +10,7 @@ mixin AdAccordion(props, size = 'full')
   - const {title = 'Заголовок', price = '$390/мес.', text = 'Текст', type = 'full'} = props
   .ad_accordion(class=`ad_accordion-${type}`)
     .ad_accordion_head
-      .ad_accordion_title
-        h2.title.title-h2= title
+      h2.title.title-h2.ad_accordion_title= title
       .ad_accordion_price
         +Btn(`Стоимость: ${price}`, ['default-alt', 'lg-2', 'f16'])
       .ad_accordion_toggle
@@ -23,6 +22,29 @@ mixin AdAccordion(props, size = 'full')
           p Кликабельный анимированный или статичный баннер представлен на каждой странице сайта и постоянно перед глазами пользователя даже при скролле любой из страниц на десктопе. Его видят все 100% посетителей сайта все время, что они находятся на сайте. В мобильной версии баннер расположен третьим блоком на главной странице сайта. В листингах он отображается сразу после закрепленных позиций и на страницах статей перед рекомендательным блоком внизу.
         .ad_accordion_actions
           if (size === 'sm')
-            +Btn(`Стоимость: ${price}`, ['default-alt', 'lg-2', 'f18'])
-          +Btn(`Посмотреть размеры`, ['primary', 'lg-2', 'f18', `${size !== 'sm' ? 'fw' : ''}`])
+            +Btn(`Стоимость: ${price}`, ['default-alt', 'lg-2', 'fa', 'f18'])
+          +Btn(`Посмотреть размеры`, ['primary', 'lg-2', 'f18', 'fa', `${size !== 'sm' ? 'fw' : ''}`], 'banner-sizes')
       .ad_accordion_preview
+
+mixin adModal()
+  .ad_modal
+    .ad_modal_title
+      span.title.title-h2 Баннер в сайдбаре
+      .ad_modal_close(data-close)
+    .ad_modal_info
+      .ad_modal_item
+        .ad_modal_item_title Desktop 308 х 480
+        .ad_modal_item_text 
+          p Desktop 308 х 480
+          p Анимация: MP4 до 1,5 MB
+      .ad_modal_item
+        .ad_modal_item_title Desktop 308 х 480
+        .ad_modal_item_text 
+          p Desktop 308 х 480
+          p Анимация: MP4 до 1,5 MB
+      .ad_modal_item
+        .ad_modal_item_title Desktop 308 х 480
+        .ad_modal_item_text 
+          p Desktop 308 х 480
+          p Анимация: MP4 до 1,5 MB
+    .ad_modal_preview

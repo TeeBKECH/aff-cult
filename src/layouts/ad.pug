@@ -20,15 +20,60 @@ include ../components/table.pug
 include ../components/copy-to.pug
 include ../components/review-stat.pug
 include ../components/comments.pug
-// SVG SPRITE
-include ../assets/images/svg/menu-sprite.svg
+include ../components/modal.pug
+
 doctype html
 html(lang="ru")
   // page — объект из templateParameters (см. webpack.config.js)
   +Head(page)
 
-  body
+  body.body
     //- +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-top.jpg', title: 'Рекламный баннер'})
+
+    // Modal banner Sizes
+    +Modal('banner-sizes')
+      +Box({})
+        +adModal()
+    // Modal Search Results
+    +Modal('search-results')
+      +Box({})
+        +SearchResults()
+
+    // Modal Menu
+    +Modal('mobile-menu')
+      +Box({type: 'shadow'})
+        +Search({modal: true})
+      +Box({})
+        +Menu([
+          { title: 'Статьи', href: 'posts.html', icon: 1 },
+          { title: 'Медиа', href: 'media.html', icon: 2 },
+          { title: 'Конференции', href: 'conferences.html', icon: 3 },
+          { title: 'Партнерки', href: 'partners.html', icon: 4 },
+          { title: 'Сервисы', href: 'services.html', icon: 5 },
+          { title: 'Инфлюенсеры', href: 'influencers.html', icon: 6 },
+          { title: 'Вики', href: 'wiki.html', icon: 7 },
+          { title: 'Арбитражные команды', href: 'commands.html', icon: 8 },
+          { title: 'Вакансии', href: 'vacancies.html', icon: 9 },
+          { title: 'Журнал', href: 'magazine.html', icon: 10 },
+        ], 3)
+
+    // Modal Topic
+    +Modal('mobile-topic')
+      +Box({type: 'sidebar'})
+        span.sidebar_title Темы
+        +Topic([
+            { title: 'Google Ads', color: "#06B0FF", href: 'posts-topic.html' },
+            { title: 'Блоги', color: "#06FF82", href: '' },
+            { title: 'Досье', color: "#FFB406", href: '' },
+            { title: 'Кейсы', color: "#FF5506", href: '' },
+            { title: 'Обзор', color: "#FF0606", href: '' },
+            { title: 'Обучение', color: "#4D06FF", href: '' },
+            { title: 'Полезное', color: "#8BFF06", href: '' },
+            { title: 'Правила', color: "#FF0606", href: '' },
+            { title: 'Спор', color: "#FF9B06", href: '' },
+            { title: 'Журнал', color: "#06B0FF", href: '' },
+          ], 5)
+        span.sidebar_more Показать все
     
     .page
       include ../components/header.pug
@@ -60,4 +105,3 @@ html(lang="ru")
         main.main.main-ad
           block content
       include ../components/footer.pug
-

@@ -20,4 +20,4 @@ mixin Btn(text = 'Текст кнопки', styles = ['default'], fn = 'log', ty
   - let classes = ''
   each item in styles
     - classes+= ` btn--${item}`
-  button(type=type, class=`btn${classes}`, data-fn-trigger=fn)= text
+  button(type=type, class=`btn${classes}`, data-fn-trigger=fn, data-modal=fn data-modal-action='toggle')= text

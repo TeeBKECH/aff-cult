@@ -15,5 +15,9 @@
 
   &-ad {
     grid-template-columns: 308px minmax(0, 1fr);
+
+    @include respond-to(lg) {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 }
