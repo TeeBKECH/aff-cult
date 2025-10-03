@@ -29,6 +29,10 @@
     @include respond-to(xl) {
       font-size: 12px;
     }
+
+    @include respond-to(xs) {
+      font-size: 10px;
+    }
   }
 
   &_subscribe {

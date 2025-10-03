@@ -5,6 +5,10 @@
 
   &-h1 {
     font-size: 32px;
+
+    @include respond-to(md) {
+      font-size: 24px;
+    }
   }
 
   &-h2 {
