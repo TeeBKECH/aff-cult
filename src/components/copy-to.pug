@@ -1,5 +1,5 @@
 mixin CopyTo(promocode = '', discount = '50%', size = 'sm')
-  .copy-to
+  .copy-to(class=`copy-to-${size}`)
     span.copy-to_discount= discount
     span.copy-to_promocode= promocode
     button.copy-to_btn

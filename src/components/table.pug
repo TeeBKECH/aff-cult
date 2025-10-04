@@ -67,3 +67,42 @@ mixin TableInfluencers(items = [], title = 'Все инфлюенсеры')
     .table_footer
       a.table_more(href="#") Показать все...
       +Btn(`Запрос на добавление`, [`glass`, 'sm', 'f14'])
+
+mixin TableCommands(items = [], title = '', commercial = false)
+  - let i = 0
+  .table_wrapper(class=`table_wrapper-commands`)
+    .table_title
+      h2.title.title-h2= title
+    .table(class=`table-commands${commercial ? ' table-commercial' : ''}`)
+      .table_head(class=`table_head-commands`)
+        span.table_head_item Название команды
+        span.table_head_item Подробнее
+      .table_items
+        each item, index in items
+          .table_item(class=`table_item-commands${item.commercial === i || commercial ? ' table_item-commercial' : ''}`)
+            +CommandCard(item, commercial)
+          - i++
+    .table_footer
+      a.table_more(href="#") Показать все...
+      +Btn(`Добавить команду`, [`glass`, 'sm', 'f14'])
+
+mixin TableTG(items = [], title = '', commercial = false)
+  - let i = 0
+  .table_wrapper(class=`table_wrapper-tg`)
+    .table_title
+      h2.title.title-h2= title
+    .table(class=`table-tg table-interactive${commercial ? ' table-commercial' : ''}`)
+      .table_head(class=`table_head-tg`)
+        span.table_head_item Название канала
+        span.table_head_item.table_head_item-interactive Подписчики
+        span.table_head_item.table_head_item-interactive Охват
+        span.table_head_item.table_head_item-interactive Динамика
+        span.table_head_item Подробнее
+      .table_items.table_items-tg
+        each item, index in items
+          .table_item(class=`table_item-tg${item.commercial === i || commercial ? ' table_item-commercial' : ''}`)
+            +TgCard(item, commercial)
+          - i++
+    .table_footer
+      a.table_more(href="#") Показать все...
+      +Btn(`Добавить команду`, [`glass`, 'sm', 'f14'])

@@ -5,9 +5,12 @@ mixin InfluencerCard(props)
     .influencer_card_info
       a.influencer_card_name(href='influencer-full.html', class=`${props.verify ? 'influencer_card_name-verify' : ''}`)
         span= props.title
-      .influencer_card_tags
-        each item, index in props.tags ? props.tags : []
-          span.influencer_card_tag= item
+      +Tags({size: 'sm', commercial: props.commercial, count: 2, alt: true}, [
+        'Гэмблинг',
+        'Беттинг',
+        'Обр',
+        'Гэмблинг',
+      ])
       p.influencer_card_exp
         span Стаж в арбитраже: 
         =props.exp

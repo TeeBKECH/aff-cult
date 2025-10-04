@@ -4,6 +4,11 @@ import { accordionsInit } from '@/scripts/components/accordion.js'
 import { filtersHandler } from '@/scripts/components/filters.js'
 import { calendarInit } from '@/scripts/components/calendar.js'
 import { initModalSystem, registerModal, toggleModal } from '@/scripts/components/modal.js'
+import { initTableSorting } from '@/scripts/components/table.js'
+
+import '@/scripts/components/stars.js'
+import '@/scripts/components/tag.js'
+import '@/scripts/components/echarts.js'
 
 import { truncateAccordionText } from '@/scripts/utils/truncText.js'
 
@@ -17,14 +22,14 @@ import '@/styles/styles.scss'
 // document.body.appendChild(cardEl)
 
 // Динамический импорт страничного кода
-;(async () => {
-  const p = location.pathname.replace(/\/+$/, '')
-  if (p.endsWith('/about.html')) {
-    await import('@/scripts/pages/about.js')
-  } else {
-    await import('@/scripts/pages/index.js')
-  }
-})()
+// ;(async () => {
+//   const p = location.pathname.replace(/\/+$/, '')
+//   if (p.endsWith('/tg-channels-full.html')) {
+//     await import('@/scripts/pages/tg.js')
+//   } else {
+//     await import('@/scripts/pages/index.js')
+//   }
+// })()
 
 const initScripts = () => {
   // Topic Scripts

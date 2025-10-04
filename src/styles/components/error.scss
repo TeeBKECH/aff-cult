@@ -1,0 +1,70 @@
+.error {
+  &_404 {
+    position: relative;
+    &_content {
+      min-height: 440px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      position: relative;
+      z-index: 10;
+
+      @include respond-to(xl) {
+        min-height: 380px;
+      }
+
+      @include respond-to(md) {
+        min-height: unset;
+      }
+    }
+    &_title {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      p {
+        font-size: 24px;
+        font-weight: 400;
+        color: $SHADOW-RITE;
+      }
+    }
+
+    &_text {
+      p {
+        color: $URBAN-STEEL;
+      }
+    }
+    &_actions {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+    }
+    &_big {
+      position: absolute;
+      right: -50px;
+      bottom: -70px;
+      line-height: 1;
+      font-size: 320px;
+      color: #f5f4f3;
+      font-weight: 300;
+      z-index: 2;
+
+      @include respond-to(xl) {
+        font-size: 250px;
+      }
+
+      @include respond-to(lg) {
+        right: -20px;
+        bottom: -40px;
+      }
+
+      @include respond-to(md) {
+        right: 0;
+        bottom: 0;
+        font-size: 170px;
+      }
+    }
+  }
+}

@@ -1,12 +1,13 @@
 mixin Conference(item, size)
   article.conference(class=`${size ? 'conference-' + size : ''}${item.commercial ? ' conference-commercial' : ''}`)
-    .conference_dates
-      span.conference_dates_big= item.dates
-      span.conference_dates_small= item.mounth
+    if (size !== 'past')
+      .conference_dates
+        span.conference_dates_big= item.dates
+        span.conference_dates_small= item.mounth
     .conference_preview
       img(src=item.preview, alt=item.title)
     .conference_content
-      a.conference_title(href=item.url)= item.title
+      a.conference_title(href=`${item.url && item.url !== '#' ? item.url : 'conference-full.html'}`)= item.title
       .conference_location
         b= item.city
         span /
@@ -14,9 +15,12 @@ mixin Conference(item, size)
       .conference_tags
         each tag in item.tags
           span.conference_tag= tag
+      if (size === 'past')
+        +Stars({text: 'Общий рейтинг', count: 5})
       .conference_actions
         +Btn(`Подробнее`, [`${item.commercial ? 'default-alt' : 'default'}`, 'sm', 'f14'])
-        +Btn(`Промокод`, [`${item.commercial ? 'default-alt' : 'default'}`, 'sm', 'f14'])
+        if (size !== 'past')
+          +Btn(`Промокод`, [`${item.commercial ? 'default-alt' : 'default'}`, 'sm', 'f14'])
     if (size === 'mini')
       .conference_actions.mini
         +Btn(`Подробнее`, [`${item.commercial ? 'commercial' : 'default'}`, 'mini', 'f14'])
@@ -31,7 +35,7 @@ mixin ConferenceMAin(item)
     .conference_preview
       img(src=item.preview, alt=item.title)
     .conference_content
-      a.conference_title(href=item.url)= item.title
+      a.conference_title(href=`${item.url && item.url !== '#' ? item.url : 'conference-full.html'}`)= item.title
       .conference_location
         b= item.city
         span /

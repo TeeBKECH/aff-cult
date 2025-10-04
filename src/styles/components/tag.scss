@@ -1,0 +1,54 @@
+.tag {
+  &_items {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    &--lg {
+      gap: 8px;
+    }
+  }
+
+  &_item {
+    color: $URBAN-STEEL;
+    border: 1px solid $URBAN-STEEL;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    cursor: default;
+
+    &--lg {
+      height: 28px;
+      padding: 0 14px;
+      font-size: 14px;
+    }
+
+    &--sm {
+      height: 20px;
+      padding: 0 8px;
+      font-size: 12px;
+    }
+
+    &--alt {
+      background: #f5f4f3;
+      color: $SHADOW-RITE;
+      border-color: $color-1;
+    }
+
+    &--hidden {
+      display: none;
+    }
+
+    &--showAll {
+      cursor: pointer;
+    }
+
+    &--commercial {
+      color: $CULT-FLAME;
+      border-color: $CULT-FLAME;
+    }
+  }
+}

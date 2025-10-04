@@ -50,7 +50,7 @@ export function initSwipers() {
     })
   }
 
-  const postSwipers = document.querySelectorAll('.sWiper_wrapper_post')
+  const postSwipers = document.querySelectorAll('#swiper-post-id')
   if (postSwipers?.length > 0) {
     postSwipers.forEach((swpr) => {
       const currentSwiper = swpr.querySelector('.sWiper')
@@ -82,6 +82,33 @@ export function initSwipers() {
             spaceBetween: 16,
           },
         },
+        // Navigation arrows
+        navigation: {
+          nextEl: nextArrow,
+          prevEl: prevArrow,
+        },
+      })
+    })
+  }
+
+  const mediaConfSwipers = document.querySelectorAll('#sWiper-media-conf')
+  if (mediaConfSwipers?.length > 0) {
+    mediaConfSwipers.forEach((swpr) => {
+      const currentSwiper = swpr.querySelector('.sWiper')
+      const prevArrow = swpr.querySelector('.sWiper_nav-prev')
+      const nextArrow = swpr.querySelector('.sWiper_nav-next')
+      const postSwiper = new Swiper(currentSwiper, {
+        modules: [Navigation],
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: false,
+        loop: false,
+        lazy: true,
+        ResizeObserver: false,
+        // autoplay: {
+        //   delay: 5500,
+        //   disableOnInteraction: false,
+        // },
         // Navigation arrows
         navigation: {
           nextEl: nextArrow,

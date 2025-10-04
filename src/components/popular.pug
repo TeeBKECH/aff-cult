@@ -1,0 +1,55 @@
+mixin PopularPartner(props)
+  .popular_item_logo
+    img(src='assets/images/public/table/1.jpg', alt='ExGaming')
+  a.popular_item_title(href='partner-full.html') ExGaming
+  button.popular_item_arrow
+
+mixin PopularService(props)
+  .popular_item_logo
+    img(src='assets/images/public/table/1.jpg', alt='ExGaming')
+  .popular_item_name
+    a.popular_item_title(href='partner-full.html') ExGaming
+    p Сервис виртуальных карт
+  button.popular_item_arrow
+
+mixin PopularCommand(props)
+  .popular_item_logo
+    img(src='assets/images/public/commands/1.jpg', alt='ExGaming')
+  .popular_item_name
+    a.popular_item_title(href='partner-full.html') Syndicate Group
+    +Tags({size: 'sm', commercial: props.commercial, count: 2}, [
+      'Гэмблинг',
+      'Беттинг',
+      'Обр',
+      'Гэмблинг',
+    ])
+  button.popular_item_arrow
+
+mixin PopularTG(props)
+  .popular_item_logo
+    img(src='assets/images/public/tg/1.jpg', alt='CPA HUNTER | Вакансии арбитража трафика')
+  .popular_item_name
+    a.popular_item_title(href='partner-full.html') CPA HUNTER | Вакансии арбитража трафика
+    +Tags({size: 'sm', commercial: props.commercial, count: 2}, [
+      'Гэмблинг',
+      'Медиа',
+      'Обр',
+      'Бэттинг',
+    ])
+
+mixin Popularitems(props)
+  - const {type = 'partners', count = 4} = props
+  - let i = 0
+  .popular
+    while i < count
+      .popular_item(class=`popular_item--${type}${i === 1 ? ' popular_item--commercial' : ''}`)
+        if (type === 'partners')
+          +PopularPartner({})
+        if (type === 'service')
+          +PopularService({})
+        if (type === 'commands')
+          +PopularCommand({commercial: i === 1})
+        if (type === 'tg')
+          +PopularTG({commercial: i === 1})
+      - i++
+

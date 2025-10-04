@@ -1,0 +1,85 @@
+//- @title: Журнал
+//- @description: Описание журнала
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow'}, 'Журнал')
+    +Filters(['Все время', '2025', '2024', '2023'])
+  
+  // Post 1
+  +Box({})
+    +Post({
+      title: 'Журнал 2025', 
+      preview: 'assets/images/public/magazine.jpg',
+    })
+  
+  // Ad Banner
+  +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-content.jpg', title: 'Рекламный баннер', type: 'content'})
+  
+  // Post 2
+  +Box({})
+    +Post({
+      title: 'Журнал 2024', 
+      preview: 'assets/images/public/magazine.jpg',
+    })
+  
+  // Post 3
+  +Box({})
+    +Post({
+      title: 'Журнал 2023', 
+      preview: 'assets/images/public/magazine.jpg',
+    })
+    
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    +Box({type: 'sidebar'})
+      span.sidebar_title Темы
+      +Topic([
+          { title: 'Google Ads', color: "#06B0FF", href: 'posts-topic.html' },
+          { title: 'Блоги', color: "#06FF82", href: '' },
+          { title: 'Досье', color: "#FFB406", href: '' },
+          { title: 'Кейсы', color: "#FF5506", href: '' },
+          { title: 'Обзор', color: "#FF0606", href: '' },
+          { title: 'Обучение', color: "#4D06FF", href: '' },
+          { title: 'Полезное', color: "#8BFF06", href: '' },
+          { title: 'Правила', color: "#FF0606", href: '' },
+          { title: 'Спор', color: "#FF9B06", href: '' },
+          { title: 'Журнал', color: "#06B0FF", href: '' },
+        ], 5)
+      span.sidebar_more Показать все
+    // Mini Posts
+    +Box({type: 'sidebar'})
+      span.sidebar_title Свежее:
+      .post_items.post_items-mini
+        +PostMini({
+          title: 'Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads', 
+        })
+        +PostMini({
+          title: 'Почему 80% арбитражников теряют свои деньги', 
+        })
+        +PostMini({
+          title: 'Почему 80% арбитражников', 
+        })
+      a.sidebar_more(href='#') Перейти в свежее
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+    // Top Blogers
+    +Box({type: 'sidebar'})
+      span.sidebar_title Топ блогов:
+      .blogers-top.blogers-top-mini
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+        +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm', tag: '12К Подписчиков'})
+      a.sidebar_more(href='#') Посмотреть весь топ
+    // Popular Comments
+    +Box({type: 'sidebar'})
+      span.sidebar_title Популярные комментарии:
+      .comments-popular.comments-popular-mini
+        +CommentItem({})
+        +CommentItem({})
+        +CommentItem({})

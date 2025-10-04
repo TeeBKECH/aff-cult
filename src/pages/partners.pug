@@ -29,20 +29,10 @@ block content
 
 block sidebar-r
   +Sidebar({pos: 'right'})
+    // Popular Partenrs
     +Box({type: 'sidebar'})
-      span.sidebar_title Темы
-      +Topic([
-          { title: 'Гемблинг', color: "#06B0FF", href: 'partners-topic.html' },
-          { title: 'CPA сети', color: "#06FF82", href: 'partners-topic.html' },
-          { title: 'Беттинг', color: "#FFB406", href: 'partners-topic.html' },
-          { title: 'Мобильные CPA', color: "#FF5506", href: 'partners-topic.html' },
-          { title: 'Push рекламные сети', color: "#FF0606", href: 'partners-topic.html' },
-          { title: 'Дейтинг', color: "#4D06FF", href: 'partners-topic.html' },
-          { title: 'mVAS', color: "#8BFF06", href: 'partners-topic.html' },
-          { title: 'Бинарные опционы', color: "#FF0606", href: 'partners-topic.html' },
-          { title: 'e-Commerce', color: "#FF9B06", href: 'partners-topic.html' },
-          { title: 'Журнал', color: "#06B0FF", href: 'partners-topic.html' },
-        ], 7)
+      span.sidebar_title Популярные партнерки
+      +Popularitems({})
       span.sidebar_more Показать все
       
     // Ad Banner

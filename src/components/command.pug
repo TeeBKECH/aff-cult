@@ -1,0 +1,17 @@
+mixin CommandCard(props, commercial = false)
+  .command_card(class=`${props.commercial || commercial ? 'command_card-commercial' : ''}`)
+    a.command_card_img(href="command-full.html")
+      img(src=`${props.img ? props.img : 'assets/images/public/infl/1.jpg' }`, alt=props.title)
+    .command_card_info
+      a.command_card_name(href='command-full.html', class=`${props.verify ? 'command_card_name-verify' : ''}`)
+        span= props.title
+      .command_card_tags
+        each item, index in props.tags ? props.tags : []
+          span.command_card_tag= item
+      p.command_card_exp
+        span Стаж в арбитраже: 
+        =props.exp
+      .command_card_description 
+        p= props.description
+    .command_card_actions
+      +Btn(`Перейти`, [`${props.commercial || commercial ? 'commercial' : 'default'}`, 'sm', 'f14'])

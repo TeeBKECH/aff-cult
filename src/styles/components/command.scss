@@ -1,0 +1,139 @@
+.command {
+  &_card {
+    display: grid;
+    grid-template-columns: 200px 1fr 82px;
+    gap: 16px;
+    padding: 10px 12px;
+    background: $SACRED-LIGHT;
+    border-color: $SACRED-LIGHT;
+    $card: &;
+
+    @include respond-to(xl) {
+      grid-template-columns: 90px 1fr 82px;
+      gap: 12px;
+    }
+
+    @include respond-to(sm) {
+      grid-template-columns: 1fr 82px;
+      align-items: flex-start;
+    }
+
+    &_img {
+      width: 100%;
+      height: 132px;
+      border-radius: 6px;
+      overflow: hidden;
+
+      @include respond-to(xl) {
+        aspect-ratio: 2/1.3;
+        height: unset;
+      }
+
+      @include respond-to(sm) {
+        width: 200px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @include respond-to(sm) {
+        grid-column: 1/3;
+        grid-row: 2/3;
+      }
+    }
+
+    &_name {
+      font-size: 24px;
+      font-weight: 700;
+      color: $SHADOW-RITE;
+      text-decoration: none;
+      line-height: 1;
+
+      @include respond-to(xl) {
+        font-size: 20px;
+      }
+
+      span {
+      }
+
+      &-verify {
+        span::after {
+          content: '';
+          display: inline-block; // ключевое — псевдоэлемент в потоке текста
+          width: 16px;
+          height: 16px;
+          margin-left: 0.35em; // отступ от текста
+          vertical-align: middle; // подстройте при необходимости: middle / -0.15em и т.п.
+          background: center / contain no-repeat;
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_288_32541)'%3E%3Cpath d='M15.2441 7.29303L13.6219 5.6708V3.37303C13.6219 2.82191 13.173 2.37303 12.6219 2.37303H10.3286L8.70636 0.750803C8.5108 0.559692 8.25747 0.461914 7.99969 0.461914C7.74191 0.461914 7.48858 0.559692 7.29303 0.750803L5.6708 2.37303H3.37747C2.82636 2.37303 2.37747 2.82191 2.37747 3.37303V5.6708L0.755247 7.29303C0.364136 7.67969 0.364136 8.31525 0.755247 8.70636L2.37747 10.3286V12.6219C2.37747 13.173 2.82636 13.6219 3.37747 13.6219H5.6708L7.29303 15.2441C7.48858 15.4397 7.74191 15.5375 7.99969 15.5375C8.25747 15.5375 8.5108 15.4397 8.70636 15.2441L10.3286 13.6219H12.6219C13.173 13.6219 13.6219 13.173 13.6219 12.6219V10.3286L15.2441 8.70636C15.6352 8.31525 15.6352 7.67969 15.2441 7.29303ZM10.4352 6.97303L7.60858 9.80414C7.49747 9.9108 7.35525 9.96414 7.21303 9.96414C7.0708 9.96414 6.92858 9.9108 6.82191 9.80414L5.56414 8.54636C5.34636 8.32858 5.34636 7.97747 5.56414 7.75969C5.78191 7.54191 6.13303 7.54191 6.3508 7.75969L7.21303 8.62636L9.64858 6.1908C9.70019 6.13907 9.76149 6.09802 9.82899 6.07001C9.89648 6.042 9.96884 6.02759 10.0419 6.02759C10.115 6.02759 10.1873 6.042 10.2548 6.07001C10.3223 6.09802 10.3836 6.13907 10.4352 6.1908C10.653 6.40414 10.653 6.75969 10.4352 6.97303Z' fill='%23FE6E00'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.4348 6.97278L7.60817 9.80389C7.49706 9.91056 7.35483 9.96389 7.21261 9.96389C7.07039 9.96389 6.92817 9.91056 6.8215 9.80389L5.56372 8.54611C5.34595 8.32834 5.34595 7.97723 5.56372 7.75945C5.7815 7.54167 6.13261 7.54167 6.35039 7.75945L7.21261 8.62611L9.64817 6.19056C9.69977 6.13882 9.76108 6.09777 9.82857 6.06977C9.89607 6.04176 9.96843 6.02734 10.0415 6.02734C10.1146 6.02734 10.1869 6.04176 10.2544 6.06977C10.3219 6.09777 10.3832 6.13882 10.4348 6.19056C10.6526 6.40389 10.6526 6.75945 10.4348 6.97278Z' fill='%23FDFDFD'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_288_32541'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    &_tags {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    &_tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 40px;
+      color: $SHADOW-RITE;
+      font-size: 12px;
+      line-height: 1;
+      background: #f5f4f3;
+      padding: 6px 8px;
+    }
+
+    &_exp {
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 300;
+
+      span {
+        font-weight: 400;
+      }
+    }
+
+    &_description {
+      &_more {
+        display: none;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 1.1;
+        font-weight: 300;
+      }
+    }
+
+    &_actions {
+      display: flex;
+      align-items: center;
+    }
+
+    &-commercial {
+      background: $color-12;
+      border: 1px solid $color-12;
+
+      #{$card}_tag {
+        background: rgba($CULT-FLAME, 0.12);
+        border-color: rgba($CULT-FLAME, 0.12);
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+mixin Reviews(props)
+  .reviews_wrapper
+    .reviews_top
+      h3.title.title-h3 Отзывы
+      +Btn('Оставить отзыв', [`primary`, 'md', 'f16'])
+    .reviews_tabs
+      .reviews_tab
+        button.reviews_tab_btn.reviews_tab_btn--active.reviews_tab_btn--neutral
+          span Все
+          b 25 
+      .reviews_tab
+        button.reviews_tab_btn.reviews_tab_btn--positive
+          span Положительные
+          b 24 
+      .reviews_tab
+        button.reviews_tab_btn.reviews_tab_btn--neutral
+          span Нейтральные
+          b 0 
+      .reviews_tab
+        button.reviews_tab_btn.reviews_tab_btn--negative
+          span Отрицательные
+          b 1 
+    .reviews_items
+      .reviews_item.reviews_item--positive
+        .reviews_item_author
+          +AuthorReviw({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT'})
+        .reviews_item_content
+          .reviews_item_stars
+            +Stars({text: 'Прибыльность', count: 2})
+            +Stars({text: 'Саппорт', count: 7})
+            +Stars({text: 'Надежность', count: 1})
+            +Stars({text: 'Промо-материалы', count: 10})
+          .reviews_item_text
+            span.reviews_item_title Субъективно об объективном
+            p ExGaming — CPA-сеть в iGaming-вертикали с упором на качество. Каждый партнёр получает индивидуальное сопровождение и максимальную поддержку на всех этапах работы.
+            p Мы сопровождаем каждого партнёра от подбора оффера до масштабирования. Эксклюзивные офферы, внутренняя экспертиза медиабаинга и продуманный стек инструментов — всё для уверенного роста партнеров, что становится возможным благодаря собственной инфраструктуре с внутренними командами разработки, креатива и аналитики.
+      .reviews_item.reviews_item--negative
+        .reviews_item_author
+          +AuthorReviw({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT'})
+        .reviews_item_content
+          .reviews_item_stars
+            +Stars({text: 'Прибыльность', count: 1})
+            +Stars({text: 'Саппорт', count: 2})
+            +Stars({text: 'Надежность', count: 1})
+            +Stars({text: 'Промо-материалы', count: 0})
+          .reviews_item_text
+            span.reviews_item_title Субъективно об объективном
+            p ExGaming — CPA-сеть в iGaming-вертикали с упором на качество. Каждый партнёр получает индивидуальное сопровождение и максимальную поддержку на всех этапах работы.
+            p Мы сопровождаем каждого партнёра от подбора оффера до масштабирования. Эксклюзивные офферы, внутренняя экспертиза медиабаинга и продуманный стек инструментов — всё для уверенного роста партнеров, что становится возможным благодаря собственной инфраструктуре с внутренними командами разработки, креатива и аналитики.
+    a.show_all(href='#') Все отзывы
+
+mixin ReviewsAddForm(props, variant = false, title = 'Оставить отзыв')
+  - const {auth = true} = props
+  .reviews_wrapper
+    .reviews_top.reviews_top-alt
+      h3.title.title-h3= title
+    form.reviews_form_wrapper
+      if (variant)
+        .reviews_form.reviews_form-alt
+          .reviews_form_inputs.reviews_form_inputs-alt2
+            textarea.reviews_form_input.reviews_form_input-alt2.reviews_form_input--text(name="", placeholder='Ваш отзыв...')
+            +Btn('Оставить отзыв', [`primary`, 'md', 'f16'])
+        a.show_all(href='#') Все отзывы
+      else
+        .reviews_form_author
+          if (auth)
+            +AuthorReviw({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT'})
+          else
+            .reviews_form_avatar
+              img(src='assets/images/svg/avatar-placeholder.svg', alt='placeholder img')
+            .reviews_form_inputs.reviews_form_inputs-alt
+              input.reviews_form_input.reviews_form_input--name(type='text', placeholder='Имя')
+              input.reviews_form_input.reviews_form_input--email(type='text', placeholder='E-mail')
+              input.reviews_form_input.reviews_form_input--phone(type='text', placeholder='Телефон')
+              input.reviews_form_input.reviews_form_input--tg(type='text', placeholder='Telegram @')
+        .reviews_form
+          .reviews_form_rates
+            +Stars({text: 'Прибыльность', count: 0, name: 'val-1', type: 'unlock'})
+            +Stars({text: 'Прибыльность', count: 0, name: 'val-2', type: 'unlock'})
+            +Stars({text: 'Прибыльность', count: 0, name: 'val-3', type: 'unlock'})
+            +Stars({text: 'Прибыльность', count: 0, name: 'val-4', type: 'unlock'})
+          .reviews_form_inputs
+            input.reviews_form_input.reviews_form_input--title(type='text', placeholder='Тема (0/60)')
+            textarea.reviews_form_input.reviews_form_input--text(name="", placeholder='Ваш отзыв...')
+          .reviews_form_action
+            +Btn('Оставить отзыв', [`primary`, 'md', 'f16'])

@@ -30,6 +30,13 @@
     }
   }
 
+  &_date {
+    line-height: 1;
+    font-size: 14px;
+    color: $URBAN-STEEL;
+    font-weight: 400;
+  }
+
   &_tag {
     line-height: 1;
     display: flex;

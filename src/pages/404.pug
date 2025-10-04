@@ -1,0 +1,24 @@
+//- @title: 404
+//- @description: Ошибка
+extends ../layouts/404.pug
+
+block content
+  // 404
+  +Box({type: 'error'})
+    .error_404
+      .error_404_content
+        .error_404_title
+          h1.title.title-h1 Страница не найдена
+          p Ошибка 404
+        .error_404_text
+          p Возможно, у вас опечатка в адресе страницы, 
+            br
+            | или её просто не существует :(
+        .error_404_actions
+          +Btn('Вернуться на главную', ['primary', 'lg', 'fs18'])
+      .error_404_big 404
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})

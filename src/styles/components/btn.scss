@@ -98,7 +98,7 @@
     }
 
     &-alt {
-      background: $color-12;
+      background: rgba($CULT-FLAME, 0.12);
       color: $CULT-FLAME;
 
       &:hover {
@@ -163,6 +163,11 @@
     font-size: 12px;
   }
 
+  &--xs {
+    height: 20px;
+    padding: 0 12px;
+  }
+
   &--sm {
     height: 32px;
     padding: 0 12px;
@@ -199,6 +204,7 @@
   }
 
   &--go-back {
+    background: #f5f4f3;
     padding-left: 6px;
 
     &::before {

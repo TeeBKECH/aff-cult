@@ -1,0 +1,9 @@
+mixin Tags(props, items = [])
+  - const {size = 'sm', commercial = false, count = 10, alt = false} = props
+  - let showAllAdded = false
+  .tag_items(class=`tag_items--${size}${commercial ? ' tag_items--commercial' : ''}`, data-show-more=count)
+    each item, index in items
+      .tag_item(class=`${index >= count ? 'tag_item--hidden' : ''} tag_item--${size}${commercial ? ' tag_item--commercial' : ''}${alt ? ' tag_item--alt' : ''}`)= item
+    if (count < items.length && !showAllAdded)
+      - showAllAdded = true
+      .tag_item(class=`tag_item--showAll tag_item--${size}${commercial ? ' tag_item--commercial' : ''}${alt ? ' tag_item--alt' : ''}`)= `+ ${items.length - count}`

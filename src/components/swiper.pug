@@ -24,9 +24,9 @@ mixin SwiperMain(count = 2, title = '', type = 'posts')
               })
           - i++
 
-mixin SwiperPost(count = 2)
+mixin SwiperPost(count = 2, swiperId = 'swiper-post-id')
   - let i = 0
-  .sWiper_wrapper.sWiper_wrapper_post
+  .sWiper_wrapper(id=swiperId)
     .sWiper_nav.sWiper_nav-alt
       button.sWiper_nav_item.sWiper_nav-prev
       button.sWiper_nav_item.sWiper_nav-next
@@ -34,7 +34,7 @@ mixin SwiperPost(count = 2)
       .swiper-wrapper
         while i < count
           .swiper-slide
-            .post_swiper_item
+            .sWiper_item.sWiper_item-img
               img(src='assets/images/public/post/swiper.jpg', alt='Почему 80% арбитражников теряют свои деньги на старте запуска РК в Google Ads')
           - i++
 
@@ -43,7 +43,7 @@ mixin SwiperConferencies(count = 3, title = '', commercial = false)
   .sWiper_wrapper.sWiper_wrapper-conferencies
     .sWiper_title
       h2.title.title-h2(class=`${commercial ? 'title-commercial' : ''}`)= title
-      .swiper_nav.swiper_nav-conferencies(class=`${commercial ? 'swiper_nav-commercial' : ''}`)
+      .sWiper_nav.sWiper_nav-conferencies(class=`${commercial ? 'sWiper_nav-commercial' : ''}`)
         button.sWiper_nav_item.sWiper_nav-prev
         button.sWiper_nav_item.sWiper_nav-next
     .swiper.sWiper.sWiper-conferencies
@@ -62,4 +62,29 @@ mixin SwiperConferencies(count = 3, title = '', commercial = false)
                 preview: 'assets/images/public/conf/1.jpg',
                 commercial: true
               })
+          - i++
+
+mixin SwiperConferenciesPast(count = 3, title = '')
+  - let i = 0
+  .sWiper_wrapper.sWiper_wrapper-conferencies
+    .sWiper_title
+      h2.title.title-h2(class=``)= title
+      .sWiper_nav.sWiper_nav-conferencies(class=``)
+        button.sWiper_nav_item.sWiper_nav-prev
+        button.sWiper_nav_item.sWiper_nav-next
+    .swiper.sWiper.sWiper-conferencies
+      .swiper-wrapper
+        while i < count
+          .swiper-slide
+            +Conference({
+                dates: '11-12',
+                mounth: 'сентября',
+                title: 'Affiliate Moscow 2025',
+                country: 'Россия',
+                city: 'Москва',
+                tags: ['Affiliate', 'Marketing'],
+                url: '#',
+                promocode: 'XpDrTx',
+                preview: 'assets/images/public/conf/1.jpg',
+              }, 'past')
           - i++

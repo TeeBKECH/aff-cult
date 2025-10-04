@@ -1,0 +1,10 @@
+mixin MediaBlocks()
+  .media_blocks
+    .media_block
+      .media_block_swiper
+        +SwiperPost(3, 'sWiper-media-conf')
+    .media_block
+      .media_block_video
+        img(src='assets/images/public/post/swiper.jpg', alt='title')
+        .media_block_video_play
+          button.media_block_video_play_btn

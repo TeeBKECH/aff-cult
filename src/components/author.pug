@@ -6,6 +6,13 @@ mixin Author(props)
     a.author_name(href=href)= author
     span.author_tag= tag
 
+mixin AuthorReviw()
+  .author.author-review
+    a.author_avatar(href='#', class=`avatar`)
+      img(src='assets/images/svg/avatar.svg', alt='AFF CULT')
+    a.author_name(href='#') AFF CULT
+    span.author_date 11.09.2025 в 15:43
+
 mixin AuthorComment(props, size = 'sm')
   - const {avatar = 'assets/images/svg/avatar.svg', authorName = "authorUrl", authorUrl = "#", postTitle = '', postUrl = "#"} = props
   .author_comment(class=`author_comment-${size}`)

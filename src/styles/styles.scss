@@ -36,10 +36,30 @@ img {
   display: block;
 }
 
-.hashtag {
-  color: $CULT-FLAME;
-  font-size: 16px;
+.show_all {
+  font-size: 18px;
   text-decoration: none;
+  color: $SHADOW-RITE !important;
+  line-height: 1;
+  font-weight: 500;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.hashtags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hashtag {
+  color: $CULT-FLAME !important;
+  font-size: 16px;
+  text-decoration: none !important;
+}
+
+textarea {
+  font-family: $font-main;
 }
 
 @import '@/styles/components/btn';
@@ -77,3 +97,13 @@ img {
 @import '@/styles/components/calendar';
 @import '@/styles/components/wiki';
 @import '@/styles/components/modal';
+@import '@/styles/components/speakers';
+@import '@/styles/components/stars';
+@import '@/styles/components/media';
+@import '@/styles/components/reviews';
+@import '@/styles/components/popular';
+@import '@/styles/components/error';
+@import '@/styles/components/command';
+@import '@/styles/components/tag';
+@import '@/styles/components/tg';
+@import '@/styles/components/echarts';

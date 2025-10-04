@@ -1,0 +1,22 @@
+mixin TgCard(props, commercial = false)
+  .tg_card(class=`${props.commercial || commercial ? 'tg_card-commercial' : ''}`)
+    .tg_card_info
+      a.tg_card_img(href="tg-channel-full.html", class=`${props.verify ? 'tg_card_img-verify' : ''}`)
+        img(src=`${props.img ? props.img : 'assets/images/public/infl/1.jpg' }`, alt=props.title)
+      a.tg_card_name(href='tg-channel-full.html')
+        span= props.title
+        span= props.subTitle
+      +Tags({size: 'sm', commercial: props.commercial || commercial, count: 1}, [
+        'Гэмблинг',
+        'Беттинг',
+        'Обр',
+        'Гэмблинг',
+      ])
+    .tg_card_subs(data-table-sort='subs')
+      span= props.subs
+    .tg_card_oxvat(data-table-sort='oxvat')
+      span= props.oxvat
+    .tg_card_dinamic(data-table-sort='dinamic', data-table-dinamic=props.dinamic)
+      span= props.dinamic
+    .tg_card_actions
+      +Btn(`Перейти`, [`${props.commercial || commercial ? 'commercial' : 'default'}`, 'sm', 'f14'])

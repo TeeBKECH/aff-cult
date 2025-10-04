@@ -1,0 +1,73 @@
+.speakers {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  $spkrs: &;
+
+  &_title {
+  }
+  &_items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+
+    @include respond-to(sm) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+  }
+  &_item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none !important;
+    $spkr: &;
+
+    &_avatar {
+      width: 100%;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &_name {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      p,
+      span {
+        line-height: 1;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 500;
+        color: $SHADOW-RITE;
+        transition: all 0.2s linear;
+      }
+      span {
+        font-size: 14px;
+        font-weight: 400;
+        color: $SHADOW-RITE;
+      }
+    }
+
+    &:hover {
+      #{$spkr}_name {
+        p {
+          color: $CULT-FLAME;
+        }
+      }
+    }
+  }
+
+  &_actions {
+  }
+}

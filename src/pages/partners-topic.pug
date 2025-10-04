@@ -13,7 +13,7 @@ block content
 
   // Single Topic Content
   +Box({})
-    .single_topic_content
+    +SingleContent
       h2.title.title-h2 Гемблинг: обзор вертикали, актуальных трендов и кейсов 2025
       p Гемблинг остается одним из топовых направлений в арбитраже — за 2024 год рынок достиг $97,26 млрд, что на 10% больше по сравнению с предыдущим годом ($85,24 млрд в 2023). Это значит, что рост постоянный, и лить на эту вертикаль достаточно выгодно. Причины тому — высокая конверсия за счет азартного интереса пользователей, крупные выплаты от партнерок, широкий выбор офферов под разные гео, платежеспособная аудитория, а также стабильный спрос, который не зависит от сезона. Легализация азартных игр в ряде стран повышает стабильность, а ставки от $60 до $200 за депозит по модели CPA делают рынок привлекательным для арбитражников.
       img(src='assets/images/public/partners-topic.jpg', alt='Гемблинг: обзор вертикали, актуальных трендов и кейсов 2025')
@@ -29,19 +29,9 @@ block content
 
 block sidebar-r
   +Sidebar({pos: 'right'})
+    // Popular Partenrs
     +Box({type: 'sidebar'})
-      span.sidebar_title Темы
-      +Topic([
-          { title: 'Гемблинг', color: "#06B0FF", href: 'partners-topic.html' },
-          { title: 'CPA сети', color: "#06FF82", href: 'partners-topic.html' },
-          { title: 'Беттинг', color: "#FFB406", href: 'partners-topic.html' },
-          { title: 'Мобильные CPA', color: "#FF5506", href: 'partners-topic.html' },
-          { title: 'Push рекламные сети', color: "#FF0606", href: 'partners-topic.html' },
-          { title: 'Дейтинг', color: "#4D06FF", href: 'partners-topic.html' },
-          { title: 'mVAS', color: "#8BFF06", href: 'partners-topic.html' },
-          { title: 'Бинарные опционы', color: "#FF0606", href: 'partners-topic.html' },
-          { title: 'e-Commerce', color: "#FF9B06", href: 'partners-topic.html' },
-          { title: 'Журнал', color: "#06B0FF", href: 'partners-topic.html' },
-        ], 7)
+      span.sidebar_title Популярные партнерки
+      +Popularitems({})
       span.sidebar_more Показать все
     

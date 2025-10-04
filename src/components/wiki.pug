@@ -1,9 +1,10 @@
-mixin Wiki(letter = 'A', items)
+mixin Wiki(letter = '', items, size = 'full')
   .wiki_block(id=`letter-${letter}`)
-    h2.title.title-h2.wiki_block_title= letter
+    if (letter)
+      h2.title.title-h2.wiki_block_title= letter
     .wiki_block_items
       each item in items
-        a.wiki_block_item(href="word.html")= item
+        a.wiki_block_item(href="word.html", class=`wiki_block_item--${size}`)= item
 
 mixin WikiLetters(lang = 'ru')
   - ruItems = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Э', 'Я' ]

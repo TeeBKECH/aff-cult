@@ -1,0 +1,74 @@
+//- @title: Telegram-каналы Топик
+//- @description: Описание Топик
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow', topic: '#06B0FF'}, 'Медиа', "", 'Telegram-каналы')
+    +Filters(['Все', 'Популярные', 'Новые'])
+
+  +Box({})
+    +TableTG([
+      {
+        img: 'assets/images/public/tg/1.jpg',
+        title: 'CPALENTA',
+        subTitle: 'Арбитраж трафика',
+        tags: ['Гэмблинг', 'Медиа', 'Образование'],
+        subs: 9248,
+        oxvat: 2357,
+        dinamic: '+1039',
+        verify: true,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/tg/2.jpg',
+        title: 'Антон Хоменок',
+        subTitle: '',
+        tags: ['Гэмблинг', 'Образование', 'papa'],
+        subs: 6828,
+        oxvat: 3391,
+        dinamic: '-158',
+        verify: false,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/tg/3.jpg',
+        title: 'CPALENTA',
+        subTitle: 'Арбитраж трафика',
+        tags: ['Медиа', 'papa', 'Гэмблинг'],
+        subs: 81648,
+        oxvat: 5556,
+        dinamic: '+61',
+        verify: false,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/tg/4.jpg',
+        title: 'Partneroff',
+        subTitle: 'Affiliate News',
+        tags: ['Медиа', 'papa', 'Гэмблинг'],
+        subs: 758,
+        oxvat: 425,
+        dinamic: '+109',
+        verify: false,
+        commercial: false
+      },
+    ], 'Все каналы', false)
+
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    // Popular TG channels
+    +Box({type: 'sidebar'})
+      span.sidebar_title Популярные каналы:
+      +Popularitems({type: 'tg'})
+      span.sidebar_more Показать все
+
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+
+    
+    

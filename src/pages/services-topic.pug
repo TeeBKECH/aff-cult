@@ -22,5 +22,12 @@ block content
 
 block sidebar-r
   +Sidebar({pos: 'right'})
+    // Popular Services
     +Box({type: 'sidebar'})
+      span.sidebar_title Проверенные сервисы
+      +Popularitems({type: 'service'})
+      span.sidebar_more Показать все
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+    
     

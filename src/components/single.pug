@@ -1,0 +1,21 @@
+mixin SinglePage(props)
+  .single_page
+    .single_page_nav
+      +Btn(props.backBtn, [`go-back`, 'md', 'f16'])
+    .single_page_content
+      block
+      
+mixin SingleContent()
+  .single_content
+    block
+
+mixin SingleParametres(props, items = [])
+  .single_parametres
+    .single_parametres_items
+      each item in items
+        .single_parametres_item
+          span.single_parametres_item_title= item.title
+          span.single_parametres_item_value= item.title
+    .single_parametres_footer
+      +Btn(`Сообщить об ошибке`, [`glass`, 'sm', 'f14'])
+    

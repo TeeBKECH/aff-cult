@@ -1,0 +1,14 @@
+mixin Speakers(props, items = [])
+  .speakers
+    .speakers_title
+      h2.title.title-h2= props.title
+    .speakers_items
+      each item in items 
+        a.speakers_item(href='influencer-full.html')
+          .speakers_item_avatar
+            img(src=item.img, alt=item.name)
+          .speakers_item_name
+            p= item.name
+            span= item.position
+    .speakers_actions
+      a.show_all(href='#') Показать все...

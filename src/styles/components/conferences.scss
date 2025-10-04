@@ -218,6 +218,9 @@
         width: 100%;
       }
     }
+
+    &.mini {
+    }
   }
 
   &-mini {
@@ -398,6 +401,27 @@
     padding: 16px;
     height: 100%;
 
+    @include respond-to(xl-2) {
+      padding: 8px;
+      gap: 4px;
+    }
+
+    @include respond-to(lg) {
+      width: fit-content;
+    }
+
+    @include respond-to(md) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @include respond-to(sm) {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+    }
+
     &#{$conf}-commercial {
       background: rgba($CULT-FLAME, 0.12);
     }
@@ -405,10 +429,108 @@
     #{$conf}_preview {
       height: auto;
       aspect-ratio: 1/1;
+
+      @include respond-to(lg) {
+        width: 200px;
+      }
+
+      @include respond-to(md) {
+        width: 100%;
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+
+      @include respond-to(sm) {
+        grid-column: 1/2;
+        grid-row: 3/5;
+      }
+    }
+
+    #{$conf}_title {
+      @include respond-to(xl) {
+        font-size: 12px !important;
+      }
+    }
+
+    #{$conf}_dates {
+      @include respond-to(md) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      @include respond-to(sm) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+    }
+
+    #{$conf}_tag {
+      @include respond-to(xl) {
+        font-size: 12px !important;
+      }
+    }
+
+    #{$conf}_content {
+      @include respond-to(md) {
+        grid-column: 2/3;
+        grid-row: 3/4;
+      }
+    }
+    #{$conf}_actions {
+      width: 100%;
+      @include respond-to(xl-2) {
+        flex-direction: column;
+
+        .btn {
+          width: 100%;
+        }
+      }
+
+      @include respond-to(md) {
+        grid-column: 3/4;
+        grid-row: 3/4;
+      }
+
+      @include respond-to(sm) {
+        grid-column: 2/3;
+        grid-row: 4/5;
+      }
     }
 
     &_title {
       color: $CULT-FLAME !important;
+
+      @include respond-to(xl-2) {
+        font-size: 12px !important;
+      }
+
+      @include respond-to(md) {
+        grid-column: 1/4;
+      }
+
+      @include respond-to(sm) {
+        grid-column: 1/3;
+      }
+    }
+  }
+
+  &-past {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    #{$conf}_preview {
+      width: 100%;
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    #{$conf}_content {
+      width: 100%;
     }
   }
 }

@@ -1,0 +1,292 @@
+.reviews {
+  &_wrapper {
+  }
+
+  &_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $color-1;
+
+    &-alt {
+      border: none;
+    }
+  }
+
+  &_tabs {
+    padding: 24px 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid $color-1;
+
+    @include respond-to(sm) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &_tab {
+    &_btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      span {
+        line-height: 1;
+        color: $SHADOW-RITE;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      b {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 6px;
+        line-height: 1;
+        color: $SHADOW-RITE;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      &--positive {
+        b {
+          background: #cff0c9;
+        }
+      }
+      &--neutral {
+        b {
+          background: #f5f4f3;
+        }
+      }
+      &--negative {
+        b {
+          background: #ffcecc;
+        }
+      }
+
+      &--active {
+        span {
+          color: $CULT-FLAME;
+        }
+
+        b {
+          background: rgba($CULT-FLAME, 0.12);
+          color: $CULT-FLAME;
+        }
+      }
+    }
+  }
+
+  &_items {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-left: 4px solid transparent;
+    padding: 0 12px;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $color-1;
+      position: absolute;
+      left: 0;
+      bottom: -24px;
+      z-index: 1;
+    }
+
+    &--positive {
+      border-left-color: #cff0c9;
+    }
+    &--neutral {
+      border-left-color: #f5f4f3;
+    }
+    &--negative {
+      border-left-color: #ffcecc;
+    }
+
+    &_author {
+    }
+
+    &_content {
+      padding-left: 48px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+
+      @include respond-to(xl) {
+        padding-left: 0;
+      }
+
+      @include respond-to(sm) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &_stars {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &_text {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      p {
+        @include respond-to(xl) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &_title {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      color: $SHADOW-RITE;
+    }
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-left: 48px;
+
+    @include respond-to(xl) {
+      padding-left: 0;
+    }
+
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &_author {
+      display: flex;
+      gap: 8px;
+
+      @include respond-to(sm) {
+        flex-direction: column;
+      }
+    }
+
+    &_avatar {
+      flex: none;
+      border-radius: 50%;
+      border: 1px solid $color-1;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+      }
+    }
+
+    &_rates {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+
+      @include respond-to(sm) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &_inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      &-alt {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        width: 100%;
+
+        @include respond-to(xl) {
+          grid-template-columns: 1fr;
+        }
+
+        @include respond-to(lg) {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        @include respond-to(sm) {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      &-alt2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .btn {
+          position: absolute;
+          right: 16px;
+          bottom: 16px;
+          z-index: 10;
+        }
+      }
+    }
+
+    &_input {
+      background: #f5f4f3;
+      padding: 14px;
+      color: $SHADOW-RITE;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      width: 100%;
+
+      &::placeholder {
+        color: $URBAN-STEEL;
+      }
+
+      &--title {
+      }
+      &--text {
+        resize: none;
+        height: 120px;
+      }
+
+      &-alt2 {
+        padding-bottom: 48px;
+      }
+    }
+
+    &-alt {
+      padding-left: 0;
+    }
+  }
+}

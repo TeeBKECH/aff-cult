@@ -27,6 +27,11 @@
       @content;
     }
   }
+  @if $breakpoint == xl-2 {
+    @media (max-width: $breakpoint-xl-2) {
+      @content;
+    }
+  }
 }
 
 // Миксин для flexbox

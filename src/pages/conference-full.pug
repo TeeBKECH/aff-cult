@@ -1,0 +1,131 @@
+//- @title: Конференция
+//- @description: Описание конференции
+extends ../layouts/default.pug
+
+block content
+  +Box({})
+    +SinglePage({backBtn: 'Назад в календарь'})
+      .single_intro.single_intro-conf
+        .single_intro_title
+          span.single_intro_type Конференция
+          h1.title.title-h1 Affiliate Moscow 2025
+        .single_intro_tags
+          span.single_intro_tag Affiliate
+          span.single_intro_tag Marketing
+        .single_intro_promo
+          +Btn('Получить промокод', [`default-alt`, 'sm', 'f14'])
+        .single_intro_info
+          p.single_intro_info_item Когда: 
+            span с 11 по 12 сентября 2025 года
+          p.single_intro_info_item Где: 
+            span Москва, Россия
+        .single_intro_action
+          +Btn('Регистрация', [`primary`, 'lg', 'f18', 'fw'])
+        .single_intro_preview
+          img(src='assets/images/public/post-preview-3.jpg', alt='title')
+      .single_content
+        h2.title.title-h2 О событии Affiliate Moscow 2025
+        .single_text
+          p Affiliate Moscow 2025 пройдет с 11 по 12 сентября в Москве на территории 
+            a(href='#') конференц-центра Face.
+          p Мультивертикальная конференция охватывает широкий спектр ниш: дейтинг, электронная коммерция, беттинг, финансы, нутра, стримиинг, вебкам.
+          p Организаторы планируют собрать 3000 участников из 85 стран и 900 компаний. На выставке ожидаются около 60 стендов. Affiliate Moscow 2024 стал одним из самых посещаемых с 2020 года, собрав 1745 участников. 
+          p В 2024 году Affiliate Moscow посетили компании: Pin-Up Partners, Traffic Partner, MaxRev.Ai, Advidi и многие другие.
+          .single_text-alt
+            p Билеты со скидкой 10% по промокоду AFFCULT можно приобрести на 
+              a(href='#') сайте!
+      .single_content
+        +Speakers({title: '7 cпикеров Affiliate Moscow 2025'}, [
+          {
+            name: 'Ionut Scripcariu',
+            position: 'Управляющий партнер, LiraPay',
+            img: 'assets/images/public/speakers/1.jpg'
+          },
+          {
+            name: 'Roberto Saporito',
+            position: 'Основатель, Nextgen Payment',
+            img: 'assets/images/public/speakers/2.jpg'
+          },
+          {
+            name: 'Sergey Graur',
+            position: 'Adnero',
+            img: 'assets/images/public/speakers/3.jpg'
+          },
+          {
+            name: 'Andrei Covaci',
+            position: 'BuyGoods',
+            img: 'assets/images/public/speakers/4.jpg'
+          },
+        ])
+        .hashtags
+          a.hashtag(href='#') #affiliate
+          a.hashtag(href='#') #moscow
+
+  // Conferences
+  +Box({type: 'commercial'})
+    +SwiperConferencies(3, 'Стоить посетить:', true)
+  
+  // Media
+  +Box({}, 'Медиа-материалы')
+    +MediaBlocks()
+    a.show_all(href='#') Все медиа-материалы
+  
+  // Conferences
+  +Box({})
+    +SwiperConferenciesPast(3, 'Прошедшие конференции', true)
+
+  // Reviews
+  +Box({})
+    +Reviews({})
+
+  // Reviews Add Form Auth
+  +Box({})
+    +ReviewsAddForm({auth: true})
+
+  // Reviews Add Form not Auth
+  +Box({})
+    +ReviewsAddForm({auth: false})
+ 
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    
+    // Conferences Mini
+    +Box({})
+      +Conferences([
+        {
+          dates: '11-12',
+          mounth: 'сентября',
+          title: 'Affiliate Moscow 2025',
+          country: 'Россия',
+          city: 'Москва',
+          tags: ['Affiliate', 'Marketing'],
+          url: '#',
+          promocode: 'XpDrTx',
+          preview: 'assets/images/public/conf/1.jpg',
+          commercial: true
+        },
+        {
+          dates: '25-31',
+          mounth: 'Мая',
+          title: 'Affiliate Moscow 2026',
+          country: 'Россия',
+          city: 'Краснодар',
+          tags: ['Affiliate'],
+          url: '#',
+          promocode: 'MpIRTs',
+          preview: 'assets/images/public/conf/2.jpg'
+        },
+        {
+          dates: '01-10',
+          mounth: 'Декабрь',
+          title: 'Affiliate Moscow 2026',
+          country: 'Россия',
+          city: 'Тверь',
+          tags: ['Affiliate', 'Marketing', 'Google'],
+          url: '#',
+          promocode: '123pFd',
+          preview: 'assets/images/public/conf/3.jpg'
+        },
+      ], 'mini')
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})

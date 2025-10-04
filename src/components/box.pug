@@ -1,4 +1,4 @@
-mixin Box(props, title = '', subTitle = '')
+mixin Box(props, title = '', subTitle = '', text = '')
   - const {type = 'default', topic = '', action = ''} = props
   .box(class=`box-${type}${title ? ' box-title' : ''}`)
     if (title)
@@ -13,5 +13,7 @@ mixin Box(props, title = '', subTitle = '')
             span.wiki_switcher_item.wiki_switcher_item-current English
         if (subTitle)
           p.subTitle= subTitle
+        if (text)
+          p.box_text= text
     if block
       block

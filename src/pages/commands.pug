@@ -1,0 +1,159 @@
+//- @title: Арбитражные команды
+//- @description: Описание Арбитражные команды
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow'}, 'Арбитражные команды')
+    +Filters(['Все', 'Популярные', 'Новые'])
+
+  +Box({})
+    +TableCommands([
+      {
+        img: 'assets/images/public/commands/1.jpg',
+        title: 'Syndicate Group',
+        tags: ['Гэмблинг'],
+        exp: 'более 16 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: true,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/commands/2.jpg',
+        title: 'Marlerino Group',
+        tags: ['Гэмблинг', 'Не Гэмблинг'],
+        exp: 'более 2 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: false,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/commands/3.jpg',
+        title: 'Scrooge team',
+        tags: ['Гэмблинг', 'Не Гэмблинг', 'Бэттинг'],
+        exp: 'более 22 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: false,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/commands/4.jpg',
+        title: 'PlusTeam',
+        tags: ['Гэмблинг', 'Не Гэмблинг', 'Бэттинг'],
+        exp: 'более 11 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: false,
+        commercial: false
+      },
+    ], 'Промо', true)
+
+  +Box({})
+    +TableCommands([
+      {
+        img: 'assets/images/public/commands/1.jpg',
+        title: 'Syndicate Group',
+        tags: ['Гэмблинг'],
+        exp: 'более 16 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: true,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/commands/2.jpg',
+        title: 'Marlerino Group',
+        tags: ['Гэмблинг', 'Не Гэмблинг'],
+        exp: 'более 2 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: false,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/commands/3.jpg',
+        title: 'Scrooge team',
+        tags: ['Гэмблинг', 'Не Гэмблинг', 'Бэттинг'],
+        exp: 'более 22 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: false,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/commands/4.jpg',
+        title: 'PlusTeam',
+        tags: ['Гэмблинг', 'Не Гэмблинг', 'Бэттинг'],
+        exp: 'более 11 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: false,
+        commercial: false
+      },
+    ], 'Гэмблинг', false)
+
+  +Box({})
+    +TableCommands([
+      {
+        img: 'assets/images/public/commands/1.jpg',
+        title: 'Syndicate Group',
+        tags: ['Гэмблинг'],
+        exp: 'более 16 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: true,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/commands/2.jpg',
+        title: 'Marlerino Group',
+        tags: ['Гэмблинг', 'Не Гэмблинг'],
+        exp: 'более 2 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: true,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/commands/3.jpg',
+        title: 'Scrooge team',
+        tags: ['Гэмблинг', 'Не Гэмблинг', 'Бэттинг'],
+        exp: 'более 22 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: false,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/commands/4.jpg',
+        title: 'PlusTeam',
+        tags: ['Гэмблинг', 'Не Гэмблинг', 'Бэттинг'],
+        exp: 'более 11 лет',
+        description: 'Syndicate Group — это топовая команда медиабаинга и крупнейшее performance mark',
+        verify: false,
+        commercial: false
+      },
+    ], 'Беттинг', false)
+
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    +Box({type: 'sidebar'})
+      span.sidebar_title Специализация
+      +Topic([
+          { title: 'Гэмблинг', color: "#06B0FF", href: 'commands-topic.html' },
+          { title: 'Беттинг', color: "#06FF82", href: 'commands-topic.html' },
+          { title: 'Sweepstakes', color: "#FFB406", href: 'commands-topic.html' },
+          { title: 'Образование', color: "#FF5506", href: 'commands-topic.html' },
+          { title: 'SMM', color: "#FF0606", href: 'commands-topic.html' },
+          { title: 'Мобильные приложения', color: "#4D06FF", href: 'commands-topic.html' },
+          { title: 'Планирование и менеджеент', color: "#8BFF06", href: 'commands-topic.html' },
+          { title: 'Дизайн', color: "#FF0606", href: 'commands-topic.html' },
+          { title: 'e-Commerce', color: "#FF9B06", href: 'commands-topic.html' },
+          { title: 'Журнал', color: "#06B0FF", href: 'commands-topic.html' },
+        ], 4)
+      span.sidebar_more Показать все
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+
+    // Popular Commands
+    +Box({type: 'sidebar'})
+      span.sidebar_title Популярные команды:
+      +Popularitems({type: 'commands'})
+      span.sidebar_more Показать все
+    

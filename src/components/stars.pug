@@ -1,0 +1,16 @@
+mixin Stars(props, size = 'sm')
+  - const {text = '', count = 5, countTotal = 10, name = '', type = 'locked'} = props
+  - let i = 0;
+  .stars(class=`stars-${size} stars-${type}${type === 'unlock' ? ' stars-js' : ''}`, data-review-stars=count)
+    .stars_text
+      span= text
+      //- .notice
+      //-   span.notice_icon
+      //-   .notice_hidden
+      //-     p Какой-то текст
+    .stars_items
+      while i < countTotal
+        .stars_item(class=`stars_item-${count >= i ? 'fill' : ''}`)
+        - i++
+  if (type === 'unlock')
+    input(type='hidden', name=name)
