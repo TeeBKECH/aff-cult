@@ -56,6 +56,23 @@
       color: $SHADOW-RITE;
       font-weight: 300;
     }
+
+    &-vacancies {
+      grid-template-columns: 272px 100px 68px 72px;
+      gap: 16px;
+      min-width: 592px;
+
+      #{$table}_head {
+        &_item {
+          font-size: 12px;
+
+          &:not(:first-child) {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
   }
 
   &-services {
@@ -71,6 +88,12 @@
   }
 
   &-tg {
+    #{$table}_items {
+      min-width: 592px;
+    }
+  }
+
+  &-vacancies {
     #{$table}_items {
       min-width: 592px;
     }
@@ -151,9 +174,14 @@
       }
     }
 
-    &-tg {
+    &-tg,
+    &-vacancies {
       border: 1px solid $color-1;
       padding: 0;
+    }
+
+    &-vacancies {
+      border: none;
     }
 
     &-influencers,

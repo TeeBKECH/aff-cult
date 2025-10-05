@@ -180,11 +180,11 @@ export default {
 
       // PNG/WEBP/SVG — не трогаем (svg вообще никак не оптимизируем)
       // можно инлайнить до 8kb, при желании число подстрой
-      {
-        test: /\.(png|webp|svg)$/i,
-        type: 'asset',
-        parser: { dataUrlCondition: { maxSize: 8 * 1024 } },
-      },
+      // {
+      //   test: /\.(png|webp|svg)$/i,
+      //   type: 'asset',
+      //   parser: { dataUrlCondition: { maxSize: 8 * 1024 } },
+      // },
       {
         test: /\.(woff2?|ttf|eot|otf)$/i,
         type: 'asset/resource',
@@ -215,7 +215,6 @@ export default {
     runtimeChunk: 'single',
     minimize: isProd,
     minimizer: [
-      '...',
       // Минификация изображений через Sharp (совместимо с Node 22)
       // new ImageMinimizerPlugin({
       //   minimizer: {
@@ -245,18 +244,17 @@ export default {
       //   ],
       // }),
       // PNG — lossless (без потери качества)
-      new ImageMinimizerPlugin({
-        test: /\.png$/i,
-        minimizer: {
-          implementation: ImageMinimizerPlugin.sharpMinify,
-          options: {
-            encodeOptions: {
-              png: { compressionLevel: 9, palette: true },
-            },
-          },
-        },
-      }),
-
+      // new ImageMinimizerPlugin({
+      //   test: /\.png$/i,
+      //   minimizer: {
+      //     implementation: ImageMinimizerPlugin.sharpMinify,
+      //     options: {
+      //       encodeOptions: {
+      //         png: { compressionLevel: 9, palette: true },
+      //       },
+      //     },
+      //   },
+      // }),
       // SVG — SVGO, сохраняем viewBox
       // new ImageMinimizerPlugin({
       //   test: /\.svg$/i,
@@ -271,7 +269,6 @@ export default {
       //     },
       //   },
       // }),
-
       // Только для JPEG/JPG генерируем .webp (размеры не меняем)
       // new ImageMinimizerPlugin({
       //   test: /\.jpe?g$/i,

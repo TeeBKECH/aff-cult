@@ -33,6 +33,7 @@ include ../components/popular.pug
 include ../components/command.pug
 include ../components/tag.pug
 include ../components/tg.pug
+include ../components/vacancies.pug
 
 doctype html
 html(lang="ru")
@@ -40,6 +41,7 @@ html(lang="ru")
   +Head(page)
 
   body.body
+
     // Modal Search Results
     +Modal('search-results')
       +Box({})
@@ -110,6 +112,22 @@ html(lang="ru")
                 { title: 'Правила', href: '#' }
               ], 100, 'alt')
         main.main
+          .player-picker-modal#playerPickerModal(aria-hidden="true" role="dialog" aria-modal="true")
+            .player-picker-modal__backdrop(data-close-modal-alt="")
+            .player-picker-modal__dialog(role="document")
+              button.player-picker-modal__close(type="button" data-close-modal-alt="" aria-label="Закрыть") ×
+              h3.player-picker-modal__title Выберите плеер
+              .player-picker-modal__grid
+                button.player-picker-modal__option(type="button" data-provider="youtube") YouTube
+                button.player-picker-modal__option(type="button" data-provider="vk") VK Видео
+              //- p.player-picker-modal__hint
+              //-   | Источник можно задать через атрибуты 
+              //-   code data-youtube
+              //-   |  и 
+              //-   code data-vk
+              //-   |  на блоке 
+              //-   code .post_media
+              //-   | .
           block content
         block sidebar-r
       include ../components/footer.pug

@@ -6,8 +6,7 @@ mixin CommandCard(props, commercial = false)
       a.command_card_name(href='command-full.html', class=`${props.verify ? 'command_card_name-verify' : ''}`)
         span= props.title
       .command_card_tags
-        each item, index in props.tags ? props.tags : []
-          span.command_card_tag= item
+        +Tags({size: 'sm', commercial: props.commercial || commercial, count: 1}, props.tags)
       p.command_card_exp
         span Стаж в арбитраже: 
         =props.exp

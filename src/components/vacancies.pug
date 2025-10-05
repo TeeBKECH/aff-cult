@@ -1,0 +1,14 @@
+mixin VacanciesCard(props, commercial = false)
+  .vacancies_card(class=`${props.commercial || commercial ? 'vacancies_card-commercial' : ''}`)
+    .vacancies_card_info
+      a.vacancies_card_img(href="vacancies-channel-full.html", class=`${props.verify ? 'vacancies_card_img-verify' : ''}`)
+        img(src=`${props.img ? props.img : 'assets/images/public/infl/1.jpg' }`, alt=props.title)
+      a.vacancies_card_name(href='vacancies-channel-full.html')
+        span= props.title
+      +Tags({size: 'sm', commercial: props.commercial || commercial, count: 2}, props.tags)
+    .vacancies_card_date
+      span= props.date
+    .vacancies_card_exp
+      span= props.exp
+    .vacancies_card_pay
+      span= props.pay

@@ -6,12 +6,7 @@ mixin TgCard(props, commercial = false)
       a.tg_card_name(href='tg-channel-full.html')
         span= props.title
         span= props.subTitle
-      +Tags({size: 'sm', commercial: props.commercial || commercial, count: 1}, [
-        'Гэмблинг',
-        'Беттинг',
-        'Обр',
-        'Гэмблинг',
-      ])
+      +Tags({size: 'sm', commercial: props.commercial || commercial, count: 2}, props.tags)
     .tg_card_subs(data-table-sort='subs')
       span= props.subs
     .tg_card_oxvat(data-table-sort='oxvat')

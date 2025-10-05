@@ -37,6 +37,18 @@ mixin PopularTG(props)
       'Бэттинг',
     ])
 
+mixin PopularVacancies(props)
+  .popular_item_logo
+    img(src='assets/images/public/vacancies/1.jpg', alt='CPA HUNTER | Вакансии арбитража трафика')
+  .popular_item_name
+    a.popular_item_title(href='partner-full.html') CPA HUNTER | Вакансии арбитража трафика
+    +Tags({size: 'sm', commercial: props.commercial, count: 2}, [
+      'Гэмблинг',
+      'Медиа',
+      'Обр',
+      'Бэттинг',
+    ])
+
 mixin Popularitems(props)
   - const {type = 'partners', count = 4} = props
   - let i = 0
@@ -51,5 +63,7 @@ mixin Popularitems(props)
           +PopularCommand({commercial: i === 1})
         if (type === 'tg')
           +PopularTG({commercial: i === 1})
+        if (type === 'vacancies')
+          +PopularVacancies({commercial: i === 1})
       - i++
 

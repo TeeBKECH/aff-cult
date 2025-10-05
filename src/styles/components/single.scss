@@ -52,6 +52,10 @@
         height: auto;
       }
     }
+
+    &.hidden {
+      display: none;
+    }
   }
 
   &_text {
@@ -210,6 +214,10 @@
         width: 100%;
         height: auto;
       }
+    }
+
+    &-vacancies {
+      gap: 24px;
     }
   }
 

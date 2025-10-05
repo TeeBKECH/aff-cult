@@ -15,7 +15,11 @@ mixin SingleParametres(props, items = [])
       each item in items
         .single_parametres_item
           span.single_parametres_item_title= item.title
-          span.single_parametres_item_value= item.title
-    .single_parametres_footer
-      +Btn(`Сообщить об ошибке`, [`glass`, 'sm', 'f14'])
+          if (props.link)
+            a.single_parametres_item_value(href=item.link)= item.value
+          else
+            span.single_parametres_item_value= item.value
+    if (!props.hideBtn)
+      .single_parametres_footer
+        +Btn(`Сообщить об ошибке`, [`glass`, 'sm', 'f14'])
     

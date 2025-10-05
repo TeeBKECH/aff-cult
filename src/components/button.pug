@@ -21,3 +21,19 @@ mixin Btn(text = 'Текст кнопки', styles = ['default'], fn = 'log', ty
   each item in styles
     - classes+= ` btn--${item}`
   button(type=type, class=`btn${classes}`, data-fn-trigger=fn, data-modal=fn data-modal-action='toggle')= text
+
+mixin BtnIcon(props)
+  - const {icon = '', iconPos = 'left', text = '', type = 'button', fn = '', styles = ['default']} = props
+  - let classes = ' btn--icon'
+  each item in styles
+    - classes+= ` btn--${item}`
+  button(type=type, class=`btn${classes}`, data-fn-trigger=fn, data-modal=fn data-modal-action='toggle')
+    if (iconPos === 'left')
+      svg.menu_icon(viewBox="0 0 16 16" width="16" height="16")
+        use(href=`assets/images/svg/menu-sprite.svg#${icon}`)
+      span= text
+    else
+      span= text
+      svg.menu_icon(viewBox="0 0 16 16" width="16" height="16")
+        use(href=`assets/images/svg/menu-sprite.svg#${icon}`)
+      

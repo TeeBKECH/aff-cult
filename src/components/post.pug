@@ -87,7 +87,7 @@ mixin PostSwiper(props)
 
 mixin PostMedia(props)
   - const {title = 'Заголовок', subTitle = '', type = 'img', image = 'assets/images/public/post-preview.jpg', videos = [], id = '1'} = props
-  article.post.post-media
+  article.post.post-media()
     .post_head
       .post_author
         +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT', size: 'sm'})
@@ -97,12 +97,12 @@ mixin PostMedia(props)
     a.title.title-h2.post_title(href=url)= title
     if (subTitle) 
       p.post_subTitle= subTitle
-    .post_media(class=`post_media-${type}`)
+    .post_media(class=`post_media-${type}`, data-vk="https://vkvideo.ru/video_ext.php?oid=-61782911&id=456241645&hash=baf76f901c14e7c1", data-youtube="https://www.youtube.com/embed/Dtfc27GfJtw", id=id)
       .post_media_img
         img(src=image, alt=title)
         if (type === 'video')
           .post_media_play
-            button.post_media_play_btn(data-fn-play-madia=id)
+            button.post_media_play_btn(data-fn-play-madia=id, aria-label="Смотреть видео")
     +Reacts([
       {title: 'heart', icon: '❤️', fn: 'log', count: '41'},
       {title: 'fire', icon: '🔥', fn: 'log', count: '3'},
@@ -114,6 +114,22 @@ mixin PostMedia(props)
       {title: 'Поделиться', icon: 'repost', fn: 'log'},
       {title: 'Просмотров поста', icon: 'views', count: '12K'},
     ])
+
+mixin PostAlt(props)
+  - const {text = '', url = 'post-full.html'} = props
+  article.post_alt
+    .post_alt_top
+      a.post_alt_link(href='#')
+        span Пост от 18.09.2025 15:51
+      .post_alt_actions
+        +PostActionAlt({title: 'Просмотров поста', icon: 'views', count: '12K'})
+        +PostActionAlt({title: 'Комментарии', icon: 'comment', count: '18'})
+        +PostActionAlt({title: 'Репостов', icon: 'repost2', count: '4'})
+    .post_alt_text
+      p= text
+    .post_footer
+      a.post_alt_media(href='#')
+        span Видео/Гифка
 
 //- <iframe width="1236" height="695" src="https://www.youtube.com/embed/Dtfc27GfJtw" title="Новые фильмы с ДиКаприо, Макконахи, Марго Робби - большое кино вернулось (новости)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 //- <iframe src="https://vkvideo.ru/video_ext.php?oid=-61782911&id=456241645&hash=baf76f901c14e7c1" width="640" height="360" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>

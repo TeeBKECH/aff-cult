@@ -13,6 +13,14 @@ mixin PostAction(item)
         if (item.count)
           span.post_action_count= item.count
 
+mixin PostActionAlt(item)
+  .post_action_alt
+    button.post_action_alt_btn(title=item.title)
+      svg.post_action_alt_icon(viewBox="0 0 14 14" width="14" height="14")
+        use(href=`assets/images/svg/menu-sprite.svg#menu-${item.icon}`)
+      if (item.count)
+        span.post_action_alt_count= item.count
+
 mixin PostActions(actions = [])
   .post_actions
     each item in actions

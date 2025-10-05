@@ -12,17 +12,84 @@
       border-radius: 6px;
       border: 1px solid $color-1;
 
+      @include respond-to(xl) {
+        padding: 6px;
+        gap: 8px;
+      }
+
       &_title {
+        line-height: 1;
         span {
           font-size: 16px;
           font-weight: 500;
           line-height: 1;
           color: $SHADOW-RITE;
+
+          @include respond-to(xl) {
+            font-size: 12px;
+          }
         }
       }
 
       &-full {
         grid-column: 1/4;
+      }
+    }
+
+    &_content {
+      display: grid;
+      grid-template-columns: auto auto 56px;
+      gap: 10px;
+      width: 100%;
+
+      @include respond-to(xl) {
+        grid-template-columns: 1fr;
+      }
+
+      &_col {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 8px;
+
+        span {
+          line-height: 1;
+          font-size: 12px;
+          font-weight: 500;
+          color: $SHADOW-RITE;
+        }
+
+        p {
+          line-height: 1;
+          font-size: 12px;
+          font-weight: 500;
+          color: $CULT-FLAME;
+        }
+
+        &-pos {
+          p {
+            color: #1da404;
+          }
+        }
+        &-neg {
+          p {
+            color: #f22b2e;
+          }
+        }
+      }
+
+      &-alt {
+        grid-template-columns: auto auto;
+        @include respond-to(xl) {
+          grid-template-columns: 1fr;
+        }
+      }
+      &-alt2 {
+        grid-template-columns: auto 1fr;
+
+        @include respond-to(xl) {
+          grid-template-columns: 1fr;
+        }
       }
     }
   }
@@ -31,12 +98,21 @@
     max-width: 592px;
     height: 240px;
 
+    @include respond-to(lg) {
+      max-width: unset !important;
+    }
+
     div {
       width: 100% !important;
     }
 
     canvas {
       width: 100% !important;
+    }
+
+    &-sm {
+      max-width: 56px;
+      height: 36px;
     }
   }
 }

@@ -119,7 +119,8 @@
       }
     }
 
-    &--tg {
+    &--tg,
+    &--vacancies {
       display: grid;
       grid-template-columns: 40px 1fr;
       align-items: flex-start;

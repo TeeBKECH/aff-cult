@@ -1,0 +1,114 @@
+//- @title: Вакансия
+//- @description: Описание Вакансии
+extends ../layouts/default.pug
+
+block content
+  +Box({})
+    +SinglePage({backBtn: 'Все вакансии'})
+      .single_intro.single_intro-vacancies
+        .single_intro_title
+          h1.title.title-h1
+            span SMM Manager
+          p Вакансия компании AFFCT Agency
+        +SingleParametres({hideBtn: true}, [
+          {
+            title: 'Зарплата',
+            value: 'от 1 000$',
+          },
+          {
+            title: 'Опыт работы',
+            value: '1-3 года',
+          },
+          {
+            title: 'Тип занятости',
+            value: 'Полная',
+          },
+          {
+            title: 'Место работы',
+            value: 'Удаленно',
+          },
+        ])
+
+        .single_intro_action
+          +Btn('Показать контакты', [`primary`, 'lg', 'f18', 'fw'])
+
+      .single_content.hidden(data-hidden-content)
+        h2.title.title-h2 Контакты для отправки резюме:
+        +SingleParametres({hideBtn: true, link: true}, [
+          {
+            title: 'Номер телефона',
+            link: 'tel:+74951244443',
+            value: '+7 (495) 124-44-43',
+          },
+          {
+            title: 'E-mail',
+            link: 'mailto:job@email.com',
+            value: 'job@email.com',
+          },
+          {
+            title: 'Telegram',
+            link: 'https://t.me/affct',
+            value: '@affct',
+          },
+        ])
+
+      .single_content
+        .single_text
+          p AFFCT AGENCY — global marketing & PR agency с фокусом на инфлюенс-маркетинг. Наши клиенты — лидеры в сферах iGaming, Сrypto, Trading и Investments. Мы работаем только на результат: качество, рост и достижение целей. Команда AFFCT — это сильные игроки, каждый эксперт и лидер в своей зоне. Если ты готов задавать правила игры и достигать результатов — тебе в AFFCT.
+
+      .single_content
+        h2.title.title-h2 Что предстоит делать:
+        .single_text
+          ul 
+            li Развивать и вести соцсети (YouTube, Instagram, TikTok);
+            li Разрабатывать контент-стратегии в соответствии со стандартами бренда, с учётом текущих активностей и кампаний;
+            li Создавать материалы и креативные идеи для достижения KPI;
+            li Собирать и анализировать метрики социальных сетей, готовить отчёты и презентации с выводами и предложениями по улучшению стратегии;
+            li Взаимодействовать с коллегами из других отделов для повышения эффективности контент-маркетинга.
+
+      .single_content
+        h2.title.title-h2 Требования:
+        .single_text
+          ul 
+            li Опыт работы с социальными сетями (YouTube, Instagram, TikTok) от 6 месяцев;
+            li Умение работать со всеми форматами контента: посты, сторис, видео, шортсы;
+            li Владение аналитикой: снимать метрики, интерпретировать их, формировать отчёты и презентации с конкретными выводами;
+            li Подтверждённые кейсы успешного органического роста аудитории в соцсетях;
+            li Умение принимать решения и адаптировать контент-план на основе метрик и целевых показателей.
+
+      .single_content
+        h2.title.title-h2 Дополнительные преимущества:
+        .single_text
+          ul 
+            li Практический опыт работы с AI-инструментами для контента;
+            li Креативность, выраженная в регулярной генерации и тестировании новых идей;
+            li Оперативно подстраиваться под новые задачи и вводные без потери качества;
+            li Проактивность, самодисциплина, фокус на результат.
+
+      .single_content
+        h2.title.title-h2 Что мы предлагаем:
+        .single_text
+          ul 
+            li Зарплата $1 000 + %KPI; (выплата раз в месяц, не позднее 7-го числа);
+            li Командный бонус после испытательного срока, при выполнении KPI;
+            li Удаленная работа, гибкие часы, полная занятость.
+ 
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    
+    // About Company
+    +Box({type: 'sidebar'})
+      .vacancy_company 
+        .vacancy_company_img
+          img(src='assets/images/public/vacancies/full.jpg', alt='SMM Manager')
+        .vacancy_company_text 
+          span О компании
+          p AFFCT AGENCY — ваш надежный партнер в мире инфлюенс маркетинга. Мы связываем инфлюенсеров с ведущими брендами по всему миру.
+    
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+
+    // Popular Vacancies
+    +Box({type: 'sidebar'})
+      span.sidebar_title Популярные вакансии:
+      +Popularitems({type: 'vacancies'})

@@ -1,0 +1,141 @@
+//- @title: Вакансии
+//- @description: Описание вакансий
+extends ../layouts/default.pug
+
+block content
+  // Filters
+  +Box({type: 'shadow'}, 'Вакансии')
+    +FiltersVacancies()
+  
+  +Box({})
+    +TableVacancies([
+      {
+        img: 'assets/images/public/vacancies/1.jpg',
+        title: 'SMM Manager',
+        tags: ['AFFCT Agency', 'Удаленно'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        verify: true,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/vacancies/2.jpg',
+        title: 'Affiliate-менеджер',
+        tags: ['OctoCPA', 'Удаленно'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/vacancies/3.jpg',
+        title: 'Media Buyer Google Ads | Gambling/Betting',
+        tags: ['Удаленно'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        verify: true,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/vacancies/4.jpg',
+        title: 'Фармер аккаунтов / cпециалист по развитию аккаунтов (с опытом и без)',
+        tags: ['RSA Reddit'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        commercial: true
+      },
+    ], 'Промо', true)
+
+  +Box({})
+    +TableVacancies([
+      {
+        img: 'assets/images/public/vacancies/1.jpg',
+        title: 'SMM Manager',
+        tags: ['AFFCT Agency', 'Удаленно'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        verify: true,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/vacancies/2.jpg',
+        title: 'Affiliate-менеджер',
+        tags: ['OctoCPA', 'Удаленно'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/vacancies/3.jpg',
+        title: 'Media Buyer Google Ads | Gambling/Betting',
+        tags: ['Удаленно'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        verify: true,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/vacancies/4.jpg',
+        title: 'Фармер аккаунтов / cпециалист по развитию аккаунтов (с опытом и без)',
+        tags: ['RSA Reddit'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/vacancies/1.jpg',
+        title: 'SMM Manager',
+        tags: ['AFFCT Agency', 'Удаленно'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        verify: true,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/vacancies/2.jpg',
+        title: 'SMM Ma',
+        tags: ['AFFCT Agency', 'Удаленно'],
+        date: '15.09.2025',
+        exp: '1-3 года',
+        pay: 'от 1 000$',
+        verify: true,
+        commercial: false
+      },
+    ], 'Открытые вакансии', false)
+
+  // LOAD MORE
+  +Box({})
+    +BtnPrime({text: 'Загрузить еще', mode: 'flame', size: 'lg'}, 'fw')
+
+block sidebar-r
+  +Sidebar({pos: 'right'})
+    +Box({type: 'sidebar'})
+      span.sidebar_title Категория:
+      +Topic([
+          { title: 'Медиа', color: "#06B0FF", href: 'vacancy-full.html' },
+          { title: 'Авторские каналы', color: "#06FF82", href: 'vacancy-full.html' },
+          { title: 'Арбитражные команды', color: "#FFB406", href: 'vacancy-full.html' },
+          { title: 'Блоги компаний', color: "#FF5506", href: 'vacancy-full.html' },
+          { title: 'Вакансии', color: "#FF0606", href: 'vacancy-full.html' },
+          { title: 'IT', color: "#4D06FF", href: 'vacancy-full.html' },
+          { title: 'Social Media', color: "#8BFF06", href: 'vacancy-full.html' },
+          { title: 'Digital', color: "#FF0606", href: 'vacancy-full.html' },
+          { title: 'iGaming', color: "#FF9B06", href: 'vacancy-full.html' },
+          { title: 'Журнал', color: "#06B0FF", href: 'vacancy-full.html' },
+        ], 7)
+      span.sidebar_more Показать все
+    // Ad Banner
+    +AdBanner({href: 'https://google.com', banner: 'assets/images/public/banner-right.jpg', title: 'Рекламный баннер', type: 'sidebar'})
+
+    // Popular Vacancies
+    +Box({type: 'sidebar'})
+      span.sidebar_title Популярные вакансии:
+      +Popularitems({type: 'vacancies'})

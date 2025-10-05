@@ -106,3 +106,20 @@ mixin TableTG(items = [], title = '', commercial = false)
     .table_footer
       a.table_more(href="#") Показать все...
       +Btn(`Добавить команду`, [`glass`, 'sm', 'f14'])
+
+mixin TableVacancies(items = [], title = '', commercial = false)
+  - let i = 0
+  .table_wrapper(class=`table_wrapper-vacancies`)
+    .table_title
+      h2.title.title-h2= title
+    .table(class=`table-vacancies ${commercial ? ' table-commercial' : ''}`)
+      .table_head(class=`table_head-vacancies`)
+        span.table_head_item Вакансия
+        span.table_head_item Дата публикации
+        span.table_head_item Опыт
+        span.table_head_item З/П
+      .table_items.table_items-vacancies
+        each item, index in items
+          .table_item(class=`table_item-vacancies${item.commercial === i || commercial ? ' table_item-commercial' : ''}`)
+            +VacanciesCard(item, commercial)
+          - i++

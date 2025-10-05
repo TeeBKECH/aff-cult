@@ -139,3 +139,48 @@ mixin FiltersAlt()
               span 5
           .filters_content_actions
             +Btn(`Применить`, [`primary`, 'md', 'f16'])
+
+mixin FiltersVacancies()
+  .filters-vacancies 
+    .filters_items
+      input.filters_item.filters_item-input#vacancies-search(type='text', placeholder='Профессия, должность или компания')
+
+      input.filters_checkbox#vacancies-icon(type='checkbox', name='filters')
+      label.filters_item.filters_item-icon(for="vacancies-icon")
+        svg.filters_item_icon(viewBox="0 0 16 16" width="16" height="16")
+          use(href=`assets/images/svg/menu-sprite.svg#filters`)
+
+      .filters_item.filters_item-submit
+        +Btn('Найти работу', ['primary', 'md', 'fs16'])
+
+    .filters_body
+      .filters_content(data-filters-id='vacancies-icon')
+        .filters_content_wrapper
+          .filters_content_top
+            span.title.title-h2 Фильтр
+            //- span.filters_content_arrow
+          .filters_content_box
+            .filters_content_title
+              span Категории
+            .filters_content_checkboxes
+              input.filters_content_checkbox#vacancies-1(type='checkbox', name='vacancies', checked)
+              label.filters_content_label(for="vacancies-1") Арбитраж
+              input.filters_content_checkbox#vacancies-2(type='checkbox', name='vacancies')
+              label.filters_content_label(for="vacancies-2") Менеджмент
+              input.filters_content_checkbox#vacancies-3(type='checkbox', name='vacancies')
+              label.filters_content_label(for="vacancies-3") Разработка
+              input.filters_content_checkbox#vacancies-4(type='checkbox', name='vacancies', checked)
+              label.filters_content_label(for="vacancies-4") SEO
+              input.filters_content_checkbox#vacancies-5(type='checkbox', name='vacancies')
+              label.filters_content_label(for="vacancies-5") Менеджмент
+              input.filters_content_checkbox#vacancies-6(type='checkbox', name='vacancies')
+              label.filters_content_label(for="vacancies-6") BizDev
+              input.filters_content_checkbox#vacancies-7(type='checkbox', name='vacancies', checked)
+              label.filters_content_label(for="vacancies-7") Фарминг
+              input.filters_content_checkbox#vacancies-8(type='checkbox', name='vacancies')
+              label.filters_content_label(for="vacancies-8") Менеджмент
+              input.filters_content_checkbox#vacancies-9(type='checkbox', name='vacancies')
+              label.filters_content_label(for="vacancies-9") Аккаутинг
+          .filters_content_actions
+            +Btn(`Сбросить фильтр`, [`default`, 'md', 'f16'])
+            +Btn(`Применить`, [`primary`, 'md', 'f16'])
